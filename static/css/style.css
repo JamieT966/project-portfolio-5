@@ -1,0 +1,56 @@
+:root {
+    --chem-navy: #2d3347;
+    --chem-green: #98c244;
+    --chem-red: #e6554d;
+    --chem-blue: #2eb2ff;
+    --chem-white: #f8f8f8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--chem-white);
+}
+
+/* Header, Logo and Nav Styling */
+.header {
+    background-color: var(--chem-navy);
+}
+
+.header a {
+    color: var(--chem-white);
+}
+
+.header a:hover {
+    color: var(--chem-green);
+}
+
+.logo {
+    margin-left: 20px;
+    height: 30px;
+}
+
+.navbar .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28248, 248, 248, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-toggler {
+    color: var(--chem-white);
+}
+.collapsed {
+    color: var(--chem-white);
+}
+
+/* Hero Section Styling */
+
+.hero-section {
+    background-color: var(--chem-navy);
+    height: 60vh; /* ADD MEDIA QUERY TO MAKE 1OOvh WHEN THEY STACK */
+}
+
+.hero-image {
+    width: 400px;
+}
