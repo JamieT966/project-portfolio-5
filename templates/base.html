@@ -46,7 +46,7 @@
                 </button>
                 <!-- Search, Account and Bag Icons for smaller screens-->
                 <ul class="navbar-nav ms-auto d-flex d-sm-none flex-row">
-                    <li class="nav-item mx-2">
+                    <li class="nav-item mx-2" onclick="unhideSearch()">
                         <a class="nav-link"><i id='search-icon-btn' class="fa-solid fa-magnifying-glass"></i></a>
                     </li>
                     <li class="nav-item mx-2">
@@ -71,7 +71,7 @@
                     </ul>
                     <!-- Search, Account and Bag Icons for larger screens-->
                     <ul class="navbar-nav ms-auto d-none d-sm-flex flex-row">
-                        <li class="nav-item mx-2">
+                        <li class="nav-item mx-2" onclick="unhideSearch()">
                             <a class="nav-link"><i id='search-icon-btn' class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                         <li class="nav-item mx-2">
@@ -85,7 +85,7 @@
             </nav>
         </div>
         <!-- Search overlay -->
-        <div class="" id="search-overlay"> <!--TRY TO MAKE CLICK TO OPEN/CLOSE FUNCTION WORK -->
+        <div class="d-none" id="search-overlay">
             <form method="GET" action="">
                 <div class="input-group w-100">
                     <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -95,7 +95,7 @@
                                 <i class="fas fa-search"></i>
                             </span>
                         </button>
-                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                        <button class="form-control btn btn-black border border-black rounded-0" onclick="hideSearch()">
                             <span id='search-close-btn' class="icon">
                                 <i class="fa-solid fa-xmark"></i>
                             </span>
