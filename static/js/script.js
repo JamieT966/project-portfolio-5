@@ -3,7 +3,7 @@ const closeBtn = document.getElementById('search-close-btn')
 const searchDiv = document.getElementById('search-overlay')
 
 function unhideSearch() {
-    searchDiv.classList.remove('d-none')
+    searchDiv.classList.toggle('d-none')
 }
 
 function hideSearchy() {
