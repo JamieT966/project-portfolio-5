@@ -44,7 +44,7 @@
                     data-bs-target="#navbarSupportedContent">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <!-- Search, Account and Bag Icons for larger screens-->
+                <!-- Search, Account and Bag Icons for smaller screens-->
                 <ul class="navbar-nav ms-auto d-flex d-sm-none flex-row">
                     <li class="nav-item mx-2">
                         <a class="nav-link" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -53,7 +53,7 @@
                         <a class="nav-link" href=""><i class="fa-solid fa-user"></i></a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href=""><i class="fa-solid fa-bag-shopping"></i></a>
+                        <a class="nav-link me-2" href=""><i class="fa-solid fa-bag-shopping"></i></a>
                     </li>
                 </ul>
                 <!-- Navigation -->
@@ -69,13 +69,13 @@
                             <a class="nav-link" href="">All Products</a>
                         </li>
                     </ul>
-                    <!-- Search, Account and Bag Icons for smaller screens-->
+                    <!-- Search, Account and Bag Icons for larger screens-->
                     <ul class="navbar-nav ms-auto d-none d-sm-flex flex-row">
                         <li class="nav-item mx-2">
                             <a class="nav-link" href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                         <li class="nav-item mx-2">
-                            <a class="nav-link" href=""><i class="fa-solid fa-user"></i></a>
+                            <a class="nav-link"><i class="fa-solid fa-user"></i></a>
                         </li>
                         <li class="nav-item mx-2">
                             <a class="nav-link" href=""><i class="fa-solid fa-bag-shopping"></i></a>
@@ -97,6 +97,6 @@
 
         {% block postloadjs %}
         {% endblock %}
-
+        <script src="{% static 'js/script.js' %}"></script>
     </body>
 </html>
