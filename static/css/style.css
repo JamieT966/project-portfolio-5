@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
+
 :root {
     --chem-navy: #2d3347;
     --chem-green: #98c244;
@@ -6,13 +8,19 @@
     --chem-white: #f8f8f8;
 }
 
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--chem-white);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6{
+    font-family: "Roboto", sans-serif;
     color: var(--chem-white);
 }
 
