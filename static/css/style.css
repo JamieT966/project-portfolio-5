@@ -92,3 +92,39 @@ h1, h2, h3, h4, h5, h6{
     border: 2px solid var(--chem-green);
     color: var(--chem-green);
 }
+
+/* All products Page */
+
+.cover {
+    background-color: var(--chem-white);
+}
+
+.product-heading {
+    color: var(--chem-navy);
+}
+
+hr {
+    color: var(--chem-navy);
+}
+
+.product-container {
+    background-color: var(--chem-white);
+}
+
+.product-image {
+    height: 75px;
+}
+
+.product-name {
+    color: var(--chem-green);
+    font-weight: bolder;
+}
+
+.product-name:hover {
+    color: var(--chem-green);
+    font-weight: bold;
+}
+
+.product-price {
+    color: var(--chem-navy);
+}
