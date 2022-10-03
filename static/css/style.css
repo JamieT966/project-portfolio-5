@@ -96,11 +96,7 @@ h1, h2, h3, h4, h5, h6{
 /* All products Page */
 
 .cover {
-    background-color: var(--chem-white);
-}
-
-.product-heading {
-    color: var(--chem-navy);
+    background-color: var(--chem-navy);
 }
 
 hr {
@@ -112,12 +108,12 @@ hr {
 }
 
 .product-image {
-    height: 75px;
+    height: 100px;
 }
 
 .product-name {
     color: var(--chem-green);
-    font-weight: bolder;
+    font-weight: bold;
 }
 
 .product-name:hover {
@@ -127,4 +123,11 @@ hr {
 
 .product-price {
     color: var(--chem-navy);
+    font-weight: 500;
+}
+
+.product-box {
+    background-color: var(--chem-white);
+    border-radius: 4px;
+    padding: 10px;
 }
