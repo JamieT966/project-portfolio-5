@@ -18,14 +18,12 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """
-    Displays all products page, includes sorting and search queries
-    """
+    """ A view to show individual product details """
 
     product = get_object_or_404(Product, pk=product_id)
 
     context = {
-        'products': product,
+        'product': product,
     }
 
-    return render(request, 'products/products_detail.html', context)
+    return render(request, 'products/product_detail.html', context)
