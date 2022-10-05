@@ -2,18 +2,21 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid hero-section">
-    <div class="row">
-        <div class="col-12 col-md-6 mt-2 text-center">
-            <h1 class="py-4">Quality Products From Chemstore</h1>
-            <p>Providing quality products from the people at Chemstore.</p>
-            <a class="d-flex justify-content-center text-decoration-none" href="{% url 'products' %}">
-                <button type="button" class="main-btn">Shop Now</button>
-            </a>
-        </div>
-
-        <div class="col-12 col-md-6 text-center">
-            <img src="../static/media/laptop-pay.png" class="hero-image" alt="Illustration of ecommerce transaction">
+<div class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-12 col-md-5 mt-2 text-center">
+                <h1 class="py-4">Quality Products From Chemstore</h1>
+                <p>Providing quality products from the people at Chemstore.</p>
+                <a class="d-flex justify-content-center text-decoration-none" href="{% url 'products' %}">
+                    <button type="button" class="main-btn">Shop Now</button>
+                </a>
+            </div>
+            <div class="col-12 col-md-5 text-center">
+                <img src="../static/media/laptop-pay.png" class="hero-image" alt="Illustration of ecommerce transaction">
+            </div>
+            <div class="col-1"></div>
         </div>
     </div>
 </div>
