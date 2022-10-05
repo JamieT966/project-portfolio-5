@@ -132,6 +132,28 @@ hr {
     padding: 10px;
 }
 
+/* Product Sorting */
+
+.search-term-output {
+    color: var(--chem-white);
+    margin-bottom: 0;
+}
+
+.sort-box {
+    padding: 0 10px;
+    margin-bottom: 5px;
+}
+
+.custom-select {
+    color: var(--chem-navy);
+    font-weight: 500;
+}
+
+.sort-box-border {
+    border-width: 2px;
+    color: var(--chem-green);
+}
+
 /* Product detail page  */
 
 .product-detail-box {
@@ -144,3 +166,4 @@ hr {
 .product-detail-image {
     height: 300px;
 }
+
