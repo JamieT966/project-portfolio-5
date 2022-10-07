@@ -238,3 +238,8 @@ hr {
     color: var(--chem-green);
     font-weight: bolder;
 }
+
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
