@@ -189,6 +189,12 @@ hr {
     height: 300px;
 }
 
+.quantity-btn {
+    background: var(--chem-green) !important;
+    color: var(--chem-white) !important;
+    border: 1px solid var(--chem-green) !important;
+}
+
 .add-to-btn {
         background: var(--chem-green) !important;
         color: var(--chem-white) !important;
