@@ -24,6 +24,14 @@ h1, h2, h3, h4, h5, h6{
     color: var(--chem-white);
 }
 
+.navy-text {
+    color: var(--chem-navy);
+}
+
+.off-white-text {
+    color: var(--chem-white);
+}
+
 /* Header, Logo and Nav Styling */
 .header {
     background-color: var(--chem-navy);
@@ -208,4 +216,19 @@ hr {
 
 .back-link {
     color: var(--chem-white);
+}
+
+.back-link:hover {
+    color: var(--chem-green);
+}
+
+.bag-container {
+    background-color: var(--chem-white);
+    color: var(--chem-navy);
+    border-radius: 5px;
+}
+
+.bag-header {
+    color: var(--chem-green);
+    font-weight: bolder;
 }
