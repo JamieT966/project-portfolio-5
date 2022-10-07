@@ -25,7 +25,7 @@
             <div class="col-md-6">
                 <div class="product-details-container mt-4 ms-4 text-start">
                     <h2 class="product-name">{{ product.name }}</h2>
-                    <p class="lead font-weight-bold">${{ product.price }}</p>
+                    <p class="lead"><strong>€{{ product.price }}</p></strong> 
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
@@ -47,7 +47,7 @@
 
                         <div class="col-12 ms-4 text-start">
                             <a href="{% url 'products' %}" class="btn keep-shopping-btn mt-5">
-                                <span class="icon">
+                                <span>
                                     <i class="fas fa-chevron-left"></i>
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
