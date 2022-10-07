@@ -167,6 +167,29 @@ hr {
     height: 300px;
 }
 
+.add-to-btn {
+        background: var(--chem-green) !important;
+        color: var(--chem-white) !important;
+        border: 1px solid var(--chem-green) !important;
+}
+
+.add-to-btn:hover {
+    background: var(--chem-white) !important;
+    color: var(--chem-green) !important;
+    border: 1px solid var(--chem-green) !important;
+}
+
+.keep-shopping-btn {
+    background: var(--chem-white) !important;
+    color: var(--chem-green) !important;
+    border: 1px solid var(--chem-green) !important;
+}
+
+.keep-shopping-btn:hover {
+    background: var(--chem-green) !important;
+    color: var(--chem-white) !important;
+    border: 1px solid var(--chem-green) !important;
+}
 /* Bag page  */
 
 .back-link {
