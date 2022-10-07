@@ -71,3 +71,9 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+# def get_category_title(request):
+#     category_title = Category.objects.all()
+
+#     return render(request, 'products.html', {'category_title': category_title})
