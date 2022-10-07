@@ -167,3 +167,8 @@ hr {
     height: 300px;
 }
 
+/* Bag page  */
+
+.back-link {
+    color: var(--chem-white);
+}

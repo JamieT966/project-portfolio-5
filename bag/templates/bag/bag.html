@@ -3,7 +3,28 @@
 
 {% block content %}
 <div class="cover">
-Bag
+
+    <div class="col text-center py-3">
+        <h2 class="product-heading">Your Cart</h2>
+        <a href="{% url 'products' %}" class="text-decoration-none back-link">
+            <span>
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span>Keep Shopping</span>
+        </a>
+    </div>
+    
+    <div class="row">
+        <div class="col text-center">
+            {% if bag_items %}
+                <div class="table-responsive rounded">
+
+                </div>
+            {% else %}
+                <p class="lead my-5">Your bag is empty.</p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}
 
