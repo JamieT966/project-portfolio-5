@@ -76,6 +76,20 @@ h1, h2, h3, h4, h5, h6{
     width: 350px;
 }
 
+.cart-total {
+    display: block;
+    text-align: center;
+    background-color: var(--chem-green);
+    color: var(--chem-white);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+.nav-link {
+    padding-right: 0 !important;
+}
 /* Button Styling */
 
 .main-btn {

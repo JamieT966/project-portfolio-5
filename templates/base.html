@@ -36,9 +36,9 @@
         <div class="header">
             <nav class="navbar navbar-expand-sm">
                 <!-- Logo -->
-                <a href="/">
-                    <img src="../static/media/chemstore-logo.png" class="float-start logo" alt="Chem-eShop logo">
-                </a>
+                    <a href="/">
+                        <img src="../static/media/chemstore-logo.png" class="float-start logo" alt="Chem-eShop logo">
+                    </a>
                 <!-- Taken from Bootstrap module -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     aria-label="Hamburger menu button, opens the nav bar on smaller devices"
@@ -70,9 +70,10 @@
                             </ul>
                           </li>
                         </ul>
-                    <li class="nav-item mx-2">
-                        <a class="nav-link me-2" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <li class="nav-item ms-2">
+                        <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                     </li>
+                    <p class="cart-total me-2">0</p>
                 </ul>
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -120,9 +121,10 @@
                               </li>
                             </ul>
                           </div>
-                        <li class="nav-item mx-2">
+                        <li class="nav-item ms-2 bag-icon">
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                         </li>
+                        <p class="cart-total me-2">0</p>
                     </ul>
                 </div>
             </nav>
