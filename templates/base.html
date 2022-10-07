@@ -73,7 +73,11 @@
                     <li class="nav-item ms-2">
                         <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                     </li>
+                    {% if product_count %}
+                    <p class="cart-total me-2">{{ product_count }}</p>
+                    {% else %}
                     <p class="cart-total me-2">0</p>
+                    {% endif %}
                 </ul>
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -124,7 +128,11 @@
                         <li class="nav-item ms-2 bag-icon">
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                         </li>
+                        {% if product_count %}
+                        <p class="cart-total me-2">{{ product_count }}</p>
+                        {% else %}
                         <p class="cart-total me-2">0</p>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
