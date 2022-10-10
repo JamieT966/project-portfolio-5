@@ -186,8 +186,22 @@ hr {
 }
 
 .product-detail-image {
-    height: 300px;
+    height: 220px;
 }
+
+@media only screen and (max-width: 766px) {
+    .product-detail-image {
+      width: 60%;
+      height: auto;
+    }
+  }
+
+@media only screen and (max-width: 575px) {
+    .product-detail-image {
+      width: 100%;
+      height: auto;
+    }
+  }
 
 .quantity-btn {
     background: var(--chem-green) !important;
@@ -218,6 +232,7 @@ hr {
     color: var(--chem-white) !important;
     border: 1px solid var(--chem-green) !important;
 }
+
 /* Bag page  */
 
 .back-link {
