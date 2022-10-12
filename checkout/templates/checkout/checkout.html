@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block content %}
+<div class="cover">
+    <div class="col text-center py-3">
+        <h2 class="product-heading">Shopping Bag</h2>
+        <a href="{% url 'products' %}" class="text-decoration-none back-link">
+            <span>
+                <i class="fas fa-chevron-left"></i>
+            </span>
+            <span>Keep Shopping</span>
+        </a>
+    </div>
+    <!-- Order summary  -->
+    {% for item in bag_items %}
+            <div class="col-2 mb-1">
+                <a href="{% url 'product_detail' item.product.id %}">
+                    {% if item.product.image %}
+                        <img class="w-100" src="{{ item.product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    {% endif %}
+                </a>
+            </div>
+            <div class="col-7">
+                <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                <p class="my-0 small">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
+            </div>
+            <div class="col-3 text-right">
+                <p class="my-0 small text-muted">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <hr class="my-0">
+        <div class="row text-black text-right">
+            <div class="col-7 offset-2">
+                <p class="my-0">Order Total:</p>
+                <p class="my-0">Delivery:</p>
+                <p class="my-0">Grand Total:</p>
+            </div>
+            <div class="col-3">
+                <p class="my-0">${{ total | floatformat:2 }}</p>
+                <p class="my-0">${{ delivery | floatformat:2 }}</p>
+                <p class="my-0"><strong>${{ grand_total | floatformat:2 }}</strong></p>
+            </div>
+        </div>
+    </div>
+    <!-- Delivery/ address details and payment details  -->
+    <div class="col-6 p-3 mx-auto bag-container">
+        <p>Please fill out the form below to complete your order</p>
+        <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+            {% csrf_token %}
+            <fieldset class="rounded-1 px-3 mb-3">
+                <legend class="fieldset-label small w-auto">Details</legend>
+                    {{ order_form.full_name | as_crispy_field }}
+                    {{ order_form.email | as_crispy_field }}
+            </fieldset>
+            <fieldset class="rounded-1 px-3 mb-3">
+                <legend class="fieldset-label small w-auto">Delivery</legend>
+                    {{ order_form.phone_number | as_crispy_field }}
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.street_address1 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
+                    {{ order_form.county | as_crispy_field }}
+                    {{ order_form.eircode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
+                    <div class="form-check form-check-inline float-right mr-0">
+                        {% if user.is_authenticated %}
+                            <label class="form-check-label" for="id-save-info">Save your delivery information for next time!</label>
+                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
+                        {% else %}
+                            <label class="form-check-label" for="id-save-info">
+                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
+                                <a class="text-info" href="{% url 'account_login' %}">Login</a> to save this information
+                            </label>
+                        {% endif %}
+                    </div>
+            </fieldset>
+            <fieldset class="rounded-1 px-3 mb-3">
+                <legend class="fieldset-label small w-auto">Payment Information</legend>
+                    <!-- For Stripe -->
+                    <div id="card-element">
+
+                    </div>
+                    <!-- Displays any errors with payment or form -->
+                    <div id="card-errors" role="alert">
+
+                    </div>
+                    <div class="submit-button text-end">                    
+						<a href="{% url 'view_bag' %}" class="btn rounded-1">
+							<span>
+								<i class="fas fa-chevron-left"></i>
+							</span>
+							<span class="font-weight-bold">Adjust Bag</span>
+						</a>
+						<button id="submit-button" class="btn rounded-1">
+							<span class="font-weight-bold">Complete Order</span>
+							<span>
+								<i class="fas fa-lock"></i>
+							</span>
+						</button>
+						<p class="small my-0">
+							<span>
+								<i class="fas fa-exclamation-circle"></i>
+							</span>
+							<span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+						</p>
+					</div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+{% endblock %}
