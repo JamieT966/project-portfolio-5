@@ -32,6 +32,14 @@ h1, h2, h3, h4, h5, h6{
     color: var(--chem-white);
 }
 
+.green-text {
+    color: var(--chem-green);
+}
+
+.red-text {
+    color: var(--chem-red);
+}
+
 /* Header, Logo and Nav Styling */
 .header {
     background-color: var(--chem-navy);
@@ -304,4 +312,23 @@ hr {
     height: 150px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Checkout Screen */
+
+.stripe-style-input {
+    margin: 10px 0;
+}
+
+.rounded-top-left-1 {
+    border-top-left-radius: 10px;
+}
+.rounded-top-right-1 {
+    border-top-right-radius: 10px;
+}
+.rounded-bottom-left-1 {
+    border-bottom-left-radius: 10px;
+}
+.rounded-bottom-right-1 {
+    border-bottom-right-radius: 10px;
 }
