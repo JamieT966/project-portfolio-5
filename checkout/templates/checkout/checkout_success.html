@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="cover">
+    <div class="col text-center py-3">
+        <h2 class="product-heading">Thanks for choosing Chemstore!</h2>
+        <p class="off-white-text">Your order information is below and a confirmation email will be sent to <strong>{{ order.email }}</strong></p>
+    </div>
+
+    <div class="col-12 col-lg-6 mx-auto">
+
+    </div>
+
+    <div class="row mx-0">
+        <div class="col-12 text-center mx-auto">
+            <img src="../../../media/thanks.webp" alt="Thank you for purchasing message">
+        </div>
+
+        <div class="col-12 mx-auto">
+            <p class="off-white-text text-center">To view more Chemstore products click the button below.</p>
+            <a class="d-flex justify-content-center text-decoration-none" href="{% url 'products' %}">
+                <button type="button" class="btn add-to-btn">View Products</button>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}
