@@ -320,11 +320,6 @@ hr {
 
 /* Checkout Screen */
 
-.stripe-style-input {
-    margin: 10px 0;
-    border: solid 1px var(--chem-green);
-}
-
 .rounded-top-left-1 {
     border-top-left-radius: 10px;
 }
@@ -340,4 +335,43 @@ hr {
 
 .blue-text:hover {
     color: var(--chem-green);
+}
+
+/* Stripe Stylings */
+
+.StripeElement,
+.stripe-style-input {
+    margin: 10px 0;
+    height: 40px;
+    padding: 10px 12px;
+    background-color: var(--chem-white);
+    box-shadow: 0 1px 3px 0 var(--chem-white);
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus,
+.stripe-style-input:focus,
+.stripe-style-input:active {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#payment-form .form-control,
+#card-element {
+    color: var(--chem-navy);
+    border: 1px solid var(--chem-green);
+    border-radius: 5px;
 }
