@@ -121,7 +121,8 @@ h1, h2, h3, h4, h5, h6{
     transition-duration: 0.4s;
 }
 
-.main-btn:hover {
+.main-btn:hover,
+.main-btn:focus {
     background-color: var(--chem-white);
     border: 2px solid var(--chem-green);
     color: var(--chem-green);
