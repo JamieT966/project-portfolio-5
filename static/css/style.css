@@ -227,7 +227,8 @@ hr {
         border: 1px solid var(--chem-green) !important;
 }
 
-.add-to-btn:hover {
+.add-to-btn:hover,
+.add-to-btn:focus {
     background: var(--chem-white) !important;
     color: var(--chem-green) !important;
     border: 1px solid var(--chem-green) !important;
@@ -239,11 +240,13 @@ hr {
     border: 1px solid var(--chem-green) !important;
 }
 
-.keep-shopping-btn:hover {
+.keep-shopping-btn:hover,
+.keep-shopping-btn:focus {
     background: var(--chem-green) !important;
     color: var(--chem-white) !important;
     border: 1px solid var(--chem-green) !important;
 }
+
 
 /* Bag page  */
 
