@@ -4,6 +4,7 @@ from products.models import Product
 import json
 import time
 
+
 class StripeWH_Handler:
     """
     Handle Stripe webhooks.
@@ -39,6 +40,21 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
+        # Update profile information if save_info was checked
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone_number = shipping_details.phone
+                profile.default_country = shipping_details.address.country
+                profile.default_eircode = shipping_details.address.postal_code
+                profile.default_town_or_city = shipping_details.address.city
+                profile.default_street_address1 = shipping_details.address.line1
+                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_county = shipping_details.address.state
+                profile.save()
+
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -53,7 +69,7 @@ class StripeWH_Handler:
                     town_or_city__iexact=shipping_details.address.city,
                     county__iexact=shipping_details.address.state,
                     country__iexact=shipping_details.address.country,
-                    eircode__iexact=shipping_details.address.eircode,
+                    eircode__iexact=shipping_details.address.postal_code,
                     grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -81,7 +97,6 @@ class StripeWH_Handler:
                     town_or_city__iexact=shipping_details.address.city,
                     county__iexact=shipping_details.address.state,
                     country__iexact=shipping_details.address.country,
-                    eircode__iexact=shipping_details.address.eircode,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
