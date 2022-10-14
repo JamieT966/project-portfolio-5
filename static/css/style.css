@@ -402,6 +402,7 @@ hr {
     animation: spin 1.5s linear infinite;
 }
 
+/* Taken from W3 Schools */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
