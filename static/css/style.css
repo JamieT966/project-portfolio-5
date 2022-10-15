@@ -85,6 +85,10 @@ h1, h2, h3, h4, h5, h6{
     color: var(--chem-white) !important;
 }
 
+input[name='q']::placeholder {
+    color: #aab7c4;
+}
+
 /* Hero Section Styling */
 
 .hero-section {
@@ -419,6 +423,21 @@ select option[value=""] {
   }
 
 /* Allauth form change */
-  .form-group {
-    padding-bottom: 1px !important;
-  }
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+}
+
+.allauth-form-inner-content input {
+    border-color: var(--chem-green);
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.allauth-form-inner-content .form-check-label {
+    margin-top: 15px;
+}
