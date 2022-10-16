@@ -136,7 +136,7 @@ input[name='q']::placeholder {
 
 .cover {
     background-color: var(--chem-navy);
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
 }
 
 hr {
@@ -456,4 +456,11 @@ select option[value=""] {
 
 #id_default_country option:first-child {
     color: #aab7c4;
+}
+
+/* Order history on profile page */
+
+.order-history {
+    max-height: 400px;
+    overflow-y: auto;
 }
