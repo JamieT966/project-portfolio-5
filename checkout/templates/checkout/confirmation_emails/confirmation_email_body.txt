@@ -1,0 +1,22 @@
+Hi {{ order.full_name }},
+
+This is a confirmation of order number: {{ order.order_number }}.
+
+Thank you for purchasing from Chem-eShop. Your order details are below.
+
+Order Date: €{{ order.order_total }}
+Delivery Cost: €{{ order.delivery_cost }}
+Total Cost: €{{ order.grand_total }}
+
+Delivery Address: 
+
+{{ order.street_address1 }}
+{{ order.street_address2 }}
+{{ order.town_or_city }}
+{{ order.county }}
+{{ order.eircode }}
+
+If you have any issues with your order, get in touch with us by calling 061 327 792 or emailing {{ contact_email }}
+
+Kind regards,
+The Chem-eShop Team
