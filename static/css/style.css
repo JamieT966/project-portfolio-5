@@ -136,6 +136,7 @@ input[name='q']::placeholder {
 
 .cover {
     background-color: var(--chem-navy);
+    padding: 0 20px;
 }
 
 hr {
@@ -440,4 +441,19 @@ select option[value=""] {
 
 .allauth-form-inner-content .form-check-label {
     margin-top: 15px;
+}
+
+/* Profile page */
+
+#profile-update-form .form-control {
+    color: var(--chem-navy);
+}
+
+#id_default_country,
+#id_default_country option:not(:first-child) {
+    color: var(--chem-navy);
+}
+
+#id_default_country option:first-child {
+    color: #aab7c4;
 }

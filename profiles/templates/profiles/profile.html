@@ -7,8 +7,40 @@
         <h2 class="product-heading">My Profile</h2>
     </div>
 
-    {{ profile }}
-
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <h4 class="green-text">Delivery Information:</h4>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn add-to-btn mt-3 float-end">Update Information</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6">
+            <h4 class="green-text">Order History:</h4>
+            {{ orders }}
+        </div>
+    </div>
 
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- For some reason I can't link this script -->
+    <script type="text/javascript" src="{% static 'profiles/js/countryfield.js' %}"></script>
+    <script>
+        let countrySelected = $('#id_default_country').val();
+        if(!countrySelected) {
+            $('#id_default_country').css('color', '#aab7c4');
+        };
+        $('#id_default_country').change(function() {
+            countrySelected = $(this).val();
+            if(!countrySelected) {
+                $(this).css('color', '#aab7c4');
+            } else {
+                $(this).css('color', '#000');
+            }
+        });
+    </script>
 {% endblock %}
