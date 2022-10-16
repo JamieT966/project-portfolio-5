@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from .models import Order, OrderLineItem
 from products.models import Product
+from profiles.models import UserProfile
 import json
 import time
 
@@ -90,6 +91,7 @@ class StripeWH_Handler:
             try:
                 order = Order.objects.create(
                     full_name__iexact=shipping_details.name,
+                    user_profile=profile,
                     phone_number__iexact=shipping_details.phone,
                     email__iexact=billing_details.email,
                     street_address1__iexact=shipping_details.address.line1,
