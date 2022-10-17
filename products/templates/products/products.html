@@ -69,7 +69,7 @@
                     <div class="text-start product-price px-1">
 
                         <!-- Product Price -->
-                        <p>€{{ product.price }}</p>
+                        <p class="navy-text">€{{ product.price }}</p>
 
                         <!-- Product Rating -->
                         {% if product.rating %}
@@ -77,6 +77,12 @@
                         {% else %}
                         <small class="text-muted">No Rating</small>
                         {% endif %}
+                        {% if request.user.is_superuser %}
+                        <div>
+                            <a href="{% url 'edit_product' product.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
+                            <a href="{% url 'delete_product' product.id %}" class="remove-item text-danger text-decoration-none ms-1"><i class="fa-solid fa-trash"></i></a>
+                        </div>
+                    {% endif %}
                     </div>
 
                     <!-- Product Category -->
