@@ -221,16 +221,18 @@ hr {
     }
   }
 
+/* Buttons */
+
 .quantity-btn {
     background: var(--chem-green) !important;
     color: var(--chem-white) !important;
-    border: 1px solid var(--chem-green) !important;
+    border: 1px solid var(--chem-white) !important;
 }
 
 .add-to-btn {
         background: var(--chem-green) !important;
         color: var(--chem-white) !important;
-        border: 1px solid var(--chem-green) !important;
+        border: 1px solid var(--chem-white) !important;
 }
 
 .add-to-btn:hover,
@@ -250,7 +252,20 @@ hr {
 .keep-shopping-btn:focus {
     background: var(--chem-green) !important;
     color: var(--chem-white) !important;
-    border: 1px solid var(--chem-green) !important;
+    border: 1px solid var(--chem-white) !important;
+}
+
+.cancel-btn {
+    background: var(--chem-red) !important;
+    color: var(--chem-white) !important;
+    border: 1px solid var(--chem-white) !important;
+}
+
+.cancel-btn:hover,
+.cancel-btn:focus {
+background: var(--chem-white) !important;
+color: var(--chem-red) !important;
+border: 1px solid var(--chem-red) !important;
 }
 
 /* Bag page  */
@@ -463,4 +478,14 @@ select option[value=""] {
 .order-history {
     max-height: 400px;
     overflow-y: auto;
+}
+
+/* Product Management Page */
+
+.add-product-form {
+    border: 2px solid var(--chem-green);
+}
+
+#add-product-form .form-group {
+    margin-bottom: 5px;
 }
