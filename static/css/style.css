@@ -489,3 +489,29 @@ select option[value=""] {
 #add-product-form .form-group {
     margin-bottom: 5px;
 }
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 5px;
+    border-color: var(--chem-green);
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: var(--chem-green);
+    border-color: var(--chem-green);
+    border-radius: 5px;
+}
