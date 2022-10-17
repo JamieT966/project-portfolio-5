@@ -181,4 +181,4 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_KEY', '')
 
 # Confirmation emails
-DEFAULT_FROM_EMAIL = sales@chemstore.ie
+DEFAULT_FROM_EMAIL = 'sales@chemstore.ie'
