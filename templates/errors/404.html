@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="cover">
+    <div class="col text-center py-3">
+        <h2 class="product-heading">Page Not Found</h2>
+    </div>
+    <div class="mx-auto text-center">
+        <img src="" alt="404 page not found">
+        <p class="off-white-text">Sorry, we can't seem to find that page.</p>
+
+        <a href="{% url 'products' %}" class="btn add-to-btn mt-5">
+            <span>
+                <i class="fa-sharp fa-solid fa-house"></i>
+            </span>
+            <span>Return to Homepage</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
