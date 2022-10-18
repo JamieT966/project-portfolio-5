@@ -12,12 +12,12 @@
             <div class="col-md-6">
                 <div class="image-container my-5">
                     {% if product.image %}
-                        <a href="{{ MEDIA_URL }}product.image.url" target="_blank">
-                            <img class="product-detail-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                        <a href="{{ product.image.url }}" target="_blank">
+                            <img class="product-detail-image" src="{{ MEDIA_URL }} product.image.url" alt="{{ product.name }}">
                         </a>
                         {% else %}
                         <a href="">
-                            <img class="product-detail-image" src="../static/media/noimage.png" alt="{{ product.name }}">
+                            <img class="product-detail-image" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                         </a>
                     {% endif %}
                 </div>
@@ -27,7 +27,7 @@
                     <h2 class="product-name">{{ product.name }}</h2>
                     <p class="lead"><strong>€{{ product.price }}</p></strong> 
                     {% if product.rating %}
-                        <small class="text-muted"> <i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
