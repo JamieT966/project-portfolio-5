@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 :root {
     --chem-navy: #2d3347;
@@ -11,6 +11,10 @@
 body {
     font-family: "Open Sans", sans-serif;
     color: var(--chem-white);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 * {
@@ -20,7 +24,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: "Roboto", sans-serif;
+    font-family: "Poppins", sans-serif;
     color: var(--chem-white);
 }
 
@@ -521,4 +525,33 @@ select option[value=""] {
 .img-404 {
     width: 50%;
     min-width: 250px;
+}
+
+/* Ckeditor */
+
+.cke_chrome{
+    border-radius: 5px !important;
+    border: 2px solid #98c244 !important;
+}
+
+/* Footer styling */
+
+.footer-headings {
+    text-decoration: underline;
+    text-decoration-color: var(--chem-green);
+}
+
+.footer-size {
+    font-size: 90%;
+}
+
+/* Forces footer to stick at bottom of page */
+
+.header {
+    min-height: 50px;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #BAE8E8;
 }
