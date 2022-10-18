@@ -515,3 +515,10 @@ select option[value=""] {
     border-color: var(--chem-green);
     border-radius: 5px;
 }
+
+/* 404 Page */
+
+.img-404 {
+    width: 50%;
+    min-width: 250px;
+}
