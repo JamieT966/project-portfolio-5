@@ -555,7 +555,7 @@ select option[value=""] {
 /* 404 Page */
 
 .img-404 {
-    width: 50%;
+    width: 40%;
     min-width: 250px;
 }
 
