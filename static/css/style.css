@@ -202,7 +202,8 @@ hr {
 
 .product-box {
     background-color: var(--chem-white);
-    border-radius: 4px;
+    border: 2px solid var(--chem-green);
+    border-radius: 5px;
     padding: 10px;
 }
 
@@ -219,7 +220,8 @@ hr {
 }
 
 .custom-select {
-    color: var(--chem-navy);
+    color: var(--chem-navy) !important;
+    border: 2px solid var(--chem-green);
     font-weight: 500;
 }
 
@@ -573,12 +575,6 @@ select option[value=""] {
 
 .footer-size {
     font-size: 90%;
-}
-
-/* Forces footer to stick at bottom of page */
-
-.header {
-    min-height: 50px;
 }
 
 footer {
