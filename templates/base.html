@@ -74,10 +74,10 @@
                     <li class="nav-item ms-2">
                         <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                     </li>
-                    {% if product_count %}
-                    <p class="cart-total me-2">{{ product_count}}</p>
+                    {% if product_count != 0 %}
+                    <p class="cart-total me-2">{{ product_count }}</p>
                     {% else %}
-                    <p class="cart-total me-2">0</p>
+                    <p class="cart-total me-2 d-none">0</p>
                     {% endif %}
                 </ul>
                 <!-- Navigation -->
