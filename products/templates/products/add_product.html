@@ -14,15 +14,6 @@
                 {% csrf_token %}
                 {{ form.media }}
                 {{ form|crispy }}
-                
-                <!-- {% csrf_token %}
-                {% for field in form %}
-                    {% if field.name != 'image' %}
-                        {{ field | as_crispy_field }}
-                    {% else %}
-                        {{ field }}
-                    {% endif %}
-                {% endfor %} -->
                 <div class="text-center mt-3">
                     <a class="btn cancel-btn" href="{% url 'products' %}">Cancel</a>
                     <button class="btn add-to-btn" type="submit">Add Product</button>
