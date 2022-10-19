@@ -11,10 +11,6 @@
 body {
     font-family: "Open Sans", sans-serif;
     color: var(--chem-white);
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 * {
@@ -57,7 +53,8 @@ h1, h2, h3, h4, h5, h6{
     color: var(--chem-white);
 }
 
-.header a:hover {
+.header a:hover,
+.header a:focus {
     color: var(--chem-green);
 }
 
@@ -97,11 +94,13 @@ input[name='q']::placeholder {
 
 .hero-section {
     background-color: var(--chem-navy);
-    height: 60vh; /* ADD MEDIA QUERY TO MAKE 1OOvh WHEN THEY STACK */
+    height: 450px;
 }
 
 .hero-image {
-    width: 350px;
+    width: 70%;
+    min-width: 300px;
+
 }
 
 .cart-total {
@@ -118,6 +117,37 @@ input[name='q']::placeholder {
 .nav-link {
     padding-right: 0 !important;
 }
+
+/* Categories section */
+
+.cat-card {
+    width: 18rem;
+    color: var(--chem-navy);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(152, 194, 68, 0.5);
+    border: 1px solid var(--chem-green);
+}
+
+.cat-card-img {
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+}
+
+a:hover,
+a:focus {
+    color: var(--chem-navy);
+}
+
+/* Grow on hover animation */
+.grow { 
+    transition: all .2s ease-in-out; 
+}
+    
+.grow:hover { 
+    transform: scale(1.1); 
+    color: #272343;
+}
+
 /* Button Styling */
 
 .main-btn {
@@ -554,4 +584,9 @@ select option[value=""] {
 footer {
     margin-top: auto;
     background-color: #BAE8E8;
+    border-top: 2px solid var(--chem-green);
+}
+
+.footer-logo {
+    height: 30px;
 }

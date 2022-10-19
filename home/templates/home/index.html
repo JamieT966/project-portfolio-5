@@ -4,21 +4,79 @@
 {% block content %}
 <div class="hero-section">
     <div class="container">
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-12 col-md-4 mt-2 text-center">
-                <h1 class="py-4">Quality Products From Chemstore</h1>
+        <div class="row hero-section align-items-center">
+            <div class="col-12 col-md-6 mt-2 text-center">
+                <h1 class="pb-4">Quality Products From Chemstore</h1>
                 <p>Providing quality products from the people at Chemstore.</p>
                 <a class="d-flex justify-content-center text-decoration-none" href="{% url 'products' %}">
                     <button type="button" class="main-btn">Shop Now</button>
                 </a>
             </div>
-            <div class="col-12 col-md-7 text-center">
-                <img src="{{ MEDIA_URL }}laptop-pay.png" class="hero-image" alt="Illustration of ecommerce transaction">
+            <div class="col-12 col-md-4 mx-auto text-center">
+                <img src="{% static 'media/laptop-pay.png' %}" class="hero-image" alt="Illustration of ecommerce transaction">
             </div>
-            <div class="col-1"></div>
         </div>
     </div>
 </div>
+
+<section class="container-fluid mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 text-center">
+            <h2 class="mb-5 green-text">Product Categories</h2>
+        </div>
+
+        <div class="col-12 justify-content-center col-md-6 col-lg-4 d-flex text-center">
+            <div class="mb-5 grow cat-card">
+                <a href="{% url 'products' %}?category=ppe" class="text-decoration-none navy-text">
+                    <h5 class="navy-text py-3">PPE</h5>
+                    <p>We have an extensive range of PPE available <span> <i class="green-text fa-solid fa-arrow-up-right-from-square"></i></span></p>
+                    <img src="../../../static/media/ppe-card-1.png" class="cat-card-img" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 justify-content-center col-md-6 col-lg-4 d-flex text-center">
+            <div class="mb-5 grow cat-card">
+                <a href="{% url 'products' %}?category=spill-kits" class="text-decoration-none navy-text">
+                    <h5 class="navy-text py-3">Spill Kits</h5>
+                    <p>We have an extensive range of spill kits available <span> <i class="green-text fa-solid fa-arrow-up-right-from-square"></i></span></p>
+                    <img src="../../../static/media/spill-kit-1.png" class="cat-card-img" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 justify-content-center col-md-6 col-lg-4 d-flex text-center">
+            <div class="mb-5 grow cat-card">
+                <a href="{% url 'products' %}?category=spill-trays" class="text-decoration-none navy-text">
+                    <h5 class="navy-text py-3">Spill Trays</h5>
+                    <p>We have an extensive range of spill trays available <span> <i class="green-text fa-solid fa-arrow-up-right-from-square"></i></span></p>
+                    <img src="../../../static/media/spill-tray-card-1.png" class="cat-card-img" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 justify-content-center col-md-6 col-lg-4 d-flex text-center">
+            <div class="mb-5 grow cat-card">
+                <a href="{% url 'products' %}?category=safety-cabinets" class="text-decoration-none navy-text">
+                    <h5 class="navy-text py-3">Safety Cabinets</h5>
+                    <p>We have an extensive range of spill kits available <span> <i class="green-text fa-solid fa-arrow-up-right-from-square"></i></span></p>
+                    <img src="../../../static/media/safety-cabinet-card-1.png" class="cat-card-img" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="col-12 justify-content-center col-md-6 col-lg-4 d-flex text-center">
+            <div class="mb-5 grow cat-card">
+                <a href="{% url 'products' %}?category=site-safety" class="text-decoration-none navy-text">
+                    <h5 class="navy-text py-3">Site Safety</h5>
+                    <p>We have an extensive range of spill kits available <span> <i class="green-text fa-solid fa-arrow-up-right-from-square"></i></span></p>
+                    <img src="../../../static/media/site-safety-card-1.png" class="cat-card-img" alt="">
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
 {% endblock %}
 
