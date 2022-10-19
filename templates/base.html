@@ -48,7 +48,7 @@
                 </button>
                 <!-- Search, Account and Bag Icons for smaller screens-->
                 <!-- ADD A CONTAIER CLASS WITH COL-12 ON SMALLER SCREENS TO SOLVE A LOT OF ISSUES -->
-                <ul class="navbar-nav ms-auto d-flex d-sm-none flex-row">
+                <ul class="navbar-nav ms-auto d-flex d-sm-none flex-row pe-1">
                     <li class="nav-item mx-2" onclick="unhideSearch()">
                         <a class="nav-link"><i id='search-icon-btn' class="fa-solid fa-magnifying-glass"></i></a>
                     </li>
@@ -101,7 +101,7 @@
                         </li>
                     </ul>
                     <!-- Search, Account and Bag Icons for larger screens-->
-                    <ul class="navbar-nav ms-auto d-none d-sm-flex flex-row">
+                    <ul class="navbar-nav ms-auto d-none d-sm-flex flex-row pe-3">
                         <li class="nav-item mx-2" onclick="unhideSearch()">
                             <a class="nav-link"><i id='search-icon-btn' class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
@@ -129,10 +129,10 @@
                         <li class="nav-item ms-2 bag-icon">
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                         </li>
-                        {% if product_count %}
+                        {% if product_count != 0 %}
                         <p class="cart-total me-2">{{ product_count }}</p>
                         {% else %}
-                        <p class="cart-total me-2">0</p>
+                        <p class="cart-total me-2 d-none">0</p>
                         {% endif %}
                     </ul>
                 </div>
@@ -192,7 +192,7 @@
                     <p><i class="fas fa-envelope me-1 green-text"></i> sales@chemstore.ie</p>
                     <p><i class="fas fa-phone me-1 green-text"></i> 061 327 792</p>
                     <p><i class="fa-solid fa-globe me-1 green-text"></i> www.chemstore.ie</p>
-                    <hr class="my-3 d-block d-md-none">
+                    <hr class="my-3 d-block d-md-none footer-break">
                 </div>
 
                 <div class="col-12 col-md-3 text-md-start font-bold">
@@ -202,7 +202,7 @@
                     <a class="dropdown-item" href="{% url 'products' %}?category=spill-trays"><p class="mb-1">Spill Trays</p></a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets"><p class="mb-1">Safety Cabinets</p></a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=site-safety"><p class="mb-1">Site Safety</p></a>
-                    <hr class="my-3 d-block d-md-none">
+                    <hr class="my-3 d-block d-md-none footer-break">
                 </div>
 
                 <div class="col-12 col-md-3 text-md-start">
@@ -218,7 +218,7 @@
                         <a href="{% url 'account_login' %}" class="dropdown-item mb-1"><p class="mb-1">Login</p></a>
                     {% endif %}
                         <a href="/" class="dropdown-item">Contact Us</a>
-                        <hr class="my-3 d-block d-md-none">
+                        <hr class="my-3 d-block d-md-none footer-break">
                 </div>
 
                 <div class="col-12 col-md-3 py-3">

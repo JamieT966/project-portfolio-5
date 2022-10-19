@@ -109,10 +109,26 @@ input[name='q']::placeholder {
 }
 
 .hero-image {
-    width: 70%;
-    min-width: 300px;
-
+    width: 400px;
 }
+
+@media only screen and (max-width: 995px) {
+    .hero-image {
+      width: 100%;
+      min-width: 300px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .hero-image {
+      width: 70%;
+      min-width: 250px;
+    }
+
+    .hero-section {
+        height: 550px;
+    }
+  }
 
 .cart-total {
     display: block;
@@ -605,4 +621,8 @@ footer {
 
 .footer a:hover {
     color: var(--chem-green);
+}
+
+.footer-break {
+    border-top: 2px solid var(--chem-green);
 }
