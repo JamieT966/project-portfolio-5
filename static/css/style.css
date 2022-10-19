@@ -583,10 +583,14 @@ select option[value=""] {
 
 footer {
     margin-top: auto;
-    background-color: #BAE8E8;
+    background-color: var(--chem-navy);
     border-top: 2px solid var(--chem-green);
 }
 
 .footer-logo {
     height: 30px;
+}
+
+.footer a:hover {
+    color: var(--chem-green);
 }

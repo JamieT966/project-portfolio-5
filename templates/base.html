@@ -182,27 +182,29 @@
         {% block content %}
         {% endblock %}
 
-        <footer class="pt-1">
-            <div class="row mx-auto mt-3 text-center navy-text footer-size">
-                <div class="col-12 col-md-3 text-start ps-3">
-                    <h5 class="navy-text mb-3 footer-headings">Address</h5>
+        <footer class="pt-1 footer">
+            <div class="row mx-auto mt-3 text-center off-white-text footer-size">
+                <div class="col-12 col-md-3 text-md-start ps-3">
+                    <h5 class="off-white-text mb-3 footer-headings">Address</h5>
                     <p><i class="fas fa-home me-1 green-text"></i> Clondrinagh Ind Estate, Limerick</p>
                     <p><i class="fas fa-envelope me-1 green-text"></i> sales@chemstore.ie</p>
                     <p><i class="fas fa-phone me-1 green-text"></i> 061 327 792</p>
                     <p><i class="fa-solid fa-globe me-1 green-text"></i> www.chemstore.ie</p>
+                    <hr class="my-3 d-block d-md-none">
                 </div>
 
-                <div class="col-12 col-md-3 text-start font-bold">
-                    <h5 class="navy-text mb-3 footer-headings">Products</h5>
+                <div class="col-12 col-md-3 text-md-start font-bold">
+                    <h5 class="off-white-text mb-3 footer-headings">Products</h5>
                     <a class="dropdown-item" href="{% url 'products' %}?category=ppe"><p class="mb-1">PPE</p></a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=spill-kits"><p class="mb-1">Spill Kits</p></a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=spill-trays"><p class="mb-1">Spill Trays</p></a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets"><p class="mb-1">Safety Cabinets</p></a>
                     <a class="dropdown-item" href="{% url 'products' %}?category=site-safety"><p class="mb-1">Site Safety</p></a>
+                    <hr class="my-3 d-block d-md-none">
                 </div>
 
-                <div class="col-12 col-md-3 text-start">
-                    <h5 class="navy-text mb-3 footer-headings">Account</h5>
+                <div class="col-12 col-md-3 text-md-start">
+                    <h5 class="off-white-text mb-3 footer-headings">Account</h5>
                     {% if request.user.is_authenticated %}
                     {% if request.user.is_superuser %}
                         <a href="{% url 'add_product' %}" class="dropdown-item my-1"><p class="mb-1">Add Product</p></a>
@@ -214,8 +216,10 @@
                         <a href="{% url 'account_login' %}" class="dropdown-item mb-1"><p class="mb-1">Login</p></a>
                     {% endif %}
                         <a href="/" class="dropdown-item">Contact Us</a>
+                        <hr class="my-3 d-block d-md-none">
                 </div>
-                <div class="col-12 col-md-3 text-end">
+
+                <div class="col-12 col-md-3 py-3">
                     <a href="/">
                         <img src="{% static 'media/chemstore-logo.png' %}" class="footer-logo" alt="Chem-eShop logo">
                     </a>
