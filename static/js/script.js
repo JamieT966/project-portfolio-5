@@ -5,6 +5,7 @@ const searchDiv = document.getElementById('search-overlay')
 
 function unhideSearch() {
     searchDiv.classList.toggle('d-none')
+    // Taken from stack overflow https://stackoverflow.com/questions/24450553/how-to-make-default-focus-on-the-search-bar-on-a-web-page-as-google-does
     $(function(){
         $("#search").focus();
     });
