@@ -5,6 +5,9 @@ const searchDiv = document.getElementById('search-overlay')
 
 function unhideSearch() {
     searchDiv.classList.toggle('d-none')
+    $(function(){
+        $("#search").focus();
+    });
 }
 
 function hideSearchy() {
