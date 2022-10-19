@@ -4,17 +4,17 @@
 {% block content %}
 <div class="cover">
     
-    {% with category.title as c %}
-    {% if c %}
     <div class="col text-center py-3">
-        <h2 class="product-heading">{{ category.friendly_name }}</h2>
+        <h2 class="product-heading" id="product-heading">Products</h2>
     </div>
-    {% else %}
-    <div class="col text-center py-3">
-        <h2 class="product-heading">Products</h2>
-    </div>
-    {% endif %}
-    {% endwith %}
+
+    <!-- {% for product in products %}
+        {% if forloop.first %}
+        <div class="col text-center py-3">
+            <h2 class="off-white-text product-heading">{{ product.category.friendly_name }}</h2>
+        </div>
+        {% endif %}
+    {% endfor %} -->
     
     <div class="container">
         <!-- <hr class="sort-box-border"> -->
@@ -101,13 +101,15 @@
 </div>
 {% endblock %}
 
-
-    {% if category.title %}
-    <div class="col text-center py-3">
-        <h2 class="product-heading">{{ category.friendly_name }}</h2>
-    </div>
-    {% else %}
-    <div class="col text-center py-3">
-        <h2 class="product-heading">Products</h2>
-    </div>
-    {% endif %}
+<!-- {% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        const currentLocation = location.href;
+        const pageTitle = document.getElementById('product-heading').innerText
+        console.log(currentLocation)
+        console.log(pageTitle)
+        if(currentLocation.indexOf('spill-kits') != -1) {
+            pageTitle.innerText = 'Spill Kits';
+        };
+    </script>
+{% endblock %} -->
