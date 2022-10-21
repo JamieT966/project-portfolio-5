@@ -7,19 +7,20 @@
         <h2 class="product-heading">Contact Us</h2>
     </div>
 
-    <div class="col-12 col-md-6">
-        <!-- EMBED GOOGLE MAP -->
-    </div>
+    <div class="row mx-auto px-5 d-flex flex-wrap-reverse">
+        <div class="col-12 col-lg-5">
+            <iframe class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2419.1410156768784!2d-8.68491838444643!3d52.67549127984389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b5cdaa2743a4b%3A0xdd7f61fd672c7192!2sChemstore%20Group!5e0!3m2!1sen!2sie!4v1666369002279!5m2!1sen!2sie" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
 
-    <div class="col-12 col-md-6 mx-auto">
-        <form method="POST" class="form mb-2">
-            {% csrf_token %}
-            {{ form|crispy}}
-            <div class="text-start">
-                <input type="submit" class="my-3 btn add-to-btn">
-            </div>
-        </form>
+        <div class="col-12 col-lg-6 mx-auto">
+            <form method="POST" class="form mb-2">
+                {% csrf_token %}
+                {{ form|crispy}}
+                <div class="text-start">
+                    <input type="submit" class="my-3 btn add-to-btn">
+                </div>
+            </form>
+        </div>
     </div>
-
 </div>
 {% endblock %}
