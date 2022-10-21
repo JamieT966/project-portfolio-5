@@ -13,6 +13,6 @@ class ContactFormAdmin(admin.ModelAdmin):
         'short_message',
     )
 
-    ordering = ('created_at',)
+    ordering = ('-created_at',)
 
 admin.site.register(ContactForm, ContactFormAdmin)

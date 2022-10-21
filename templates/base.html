@@ -67,6 +67,7 @@
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                 {% endif %}
+                                <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
                             </ul>
                           </li>
                         </ul>
@@ -123,6 +124,7 @@
                                         <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                         <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                                     {% endif %}
+                                        <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
                                 </ul>
                               </li>
                             </ul>
@@ -218,7 +220,7 @@
                         <a href="{% url 'account_signup' %}" class="dropdown-item mb-1"><p class="mb-1">Register</p></a>
                         <a href="{% url 'account_login' %}" class="dropdown-item mb-1"><p class="mb-1">Login</p></a>
                     {% endif %}
-                        <a href="/" class="dropdown-item">Contact Us</a>
+                        <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
                         <hr class="my-3 d-block d-md-none footer-break">
                 </div>
 

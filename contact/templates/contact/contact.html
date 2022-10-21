@@ -7,12 +7,19 @@
         <h2 class="product-heading">Contact Us</h2>
     </div>
 
-    <div class="col-10 mx-auto">
-        {% csrf_token %}
-        {{ form|crispy }}
+    <div class="col-12 col-md-6">
+        <!-- EMBED GOOGLE MAP -->
     </div>
 
-
+    <div class="col-12 col-md-6 mx-auto">
+        <form method="POST" class="form mb-2">
+            {% csrf_token %}
+            {{ form|crispy}}
+            <div class="text-start">
+                <input type="submit" class="my-3 btn add-to-btn">
+            </div>
+        </form>
+    </div>
 
 </div>
 {% endblock %}

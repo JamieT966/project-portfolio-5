@@ -552,6 +552,7 @@ select option[value=""] {
 
 .add-product-form {
     border: 2px solid var(--chem-green);
+    margin: 3px 0;
 }
 
 #add-product-form .form-group {
