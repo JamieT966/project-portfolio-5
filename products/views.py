@@ -149,16 +149,16 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
-def category_name(request):
-    """
-    Function that adds Category name into page
-    """
-    categories = Category.objects.all()
+# def category_name(request):
+#     """
+#     Function that adds Category name into page
+#     """
+#     categories = Category.objects.all()
 
-    if request.GET:
-        if 'category' in request.GET:
-            categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+#     if request.GET:
+#         if 'category' in request.GET:
+#             categories = request.GET['category'].split(',')
+#             products = products.filter(category__name__in=categories)
+#             categories = Category.objects.filter(name__in=categories)
 
-    return render(request, 'products/products.html', {'categories': categories})
+#     return render(request, 'products/products.html', {'categories': categories})
