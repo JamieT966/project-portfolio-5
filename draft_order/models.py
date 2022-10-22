@@ -3,7 +3,7 @@ from django.db import models
 
 class DraftOrder(models.Model):
 
-    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL)
+    # product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL)
     customer_name = models.CharField(max_length=100)
     customer_email = models.EmailField()
     customer_phone = models.CharField(max_length=10)
