@@ -1,0 +1,1 @@
+You have unsubscribed from the Hazmat Bulletin. We are sorry to see you go. If you did not mean to unsubscribe please click this link: https://chem-eshop.herokuapp.com/newsletter/sign-up
