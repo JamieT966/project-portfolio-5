@@ -1,4 +1,5 @@
 {% load static %}
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -227,6 +228,11 @@
                 <div class="col-12 col-md-3 py-3">
                     <a href="/">
                         <img src="{% static 'media/chemstore-logo.png' %}" class="footer-logo" alt="Chem-eShop logo">
+                    </a>
+
+                    <hr>
+                    <a class="newsletter-sign-up" href="{% url 'newsletter' %}">
+                        <h6>To sign up to our newsletter, click here!</h6>
                     </a>
                 </div>        
             </div>

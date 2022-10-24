@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="cover">
+    <div class="col text-center py-3">
+        <h2 class="product-heading">Newsletter Sign Up</h2>
+    </div>
+
+        <div class="col-10 col-md-6 mx-auto">
+            <form method="POST" class="form mb-2">
+                {% csrf_token %}
+                {{ form|crispy}}
+                <div class="text-start">
+                    <input type="submit" class="my-3 btn add-to-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

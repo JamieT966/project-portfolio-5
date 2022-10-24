@@ -640,3 +640,9 @@ footer {
     outline: 2px solid var(--chem-green);
     border-radius: 5px;
 }
+
+/* Newsletter page */
+
+.newsletter-sign-up {
+    text-decoration-color: var(--chem-green);
+}
