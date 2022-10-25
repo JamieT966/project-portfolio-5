@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from profiles.models import UserProfile
 
 
 class Category(models.Model):
@@ -30,3 +31,17 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Review(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=80, blank=True)
+    review = models.TextField(max_length=400, blank=True)
+    rating = models.FloatField()
+    status = models.BooleanField(default=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
