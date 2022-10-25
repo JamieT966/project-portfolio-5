@@ -7,14 +7,6 @@
     <div class="col text-center py-3">
         <h2 class="product-heading" id="product-heading">Products</h2>
     </div>
-
-    <!-- {% for product in products %}
-        {% if forloop.first %}
-        <div class="col text-center py-3">
-            <h2 class="off-white-text product-heading">{{ product.category.friendly_name }}</h2>
-        </div>
-        {% endif %}
-    {% endfor %} -->
     
     <div class="container">
         <!-- <hr class="sort-box-border"> -->
@@ -80,7 +72,9 @@
                         {% if request.user.is_superuser %}
                         <div>
                             <a href="{% url 'edit_product' product.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
-                            <a href="{% url 'delete_product' product.id %}" class="remove-item text-danger text-decoration-none ms-1"><i class="fa-solid fa-trash"></i></a>
+                            <button type="button" class="remove-item text-danger text-decoration-none ms-1 shadow-none delete-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
                         </div>
                     {% endif %}
                     </div>
@@ -95,21 +89,49 @@
                     {% endif %}
                 </a>
             </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5 navy-text" id="exampleModalLabel">Product Deletion</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-start">
+                        <p class="navy-text">You are about to delete this product permanently. Are you sure?</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="{% url 'delete_product' product.id %}" class="btn btn-danger">Delete Permanently</a>
+                    </div>
+                </div>
+                </div>
+            </div>
             {% endfor %}
         </div>
     </div>
 </div>
+
 {% endblock %}
 
-<!-- {% block postloadjs %}
+
+{% block postloadjs %}
     {{ block.super }}
     <script type="text/javascript">
-        const currentLocation = location.href;
-        const pageTitle = document.getElementById('product-heading').innerText
-        console.log(currentLocation)
-        console.log(pageTitle)
-        if(currentLocation.indexOf('spill-kits') != -1) {
-            pageTitle.innerText = 'Spill Kits';
-        };
+
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
+
+        myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+        })
+
+        // const currentLocation = location.href;
+        // const pageTitle = document.getElementById('product-heading').innerText
+        // console.log(currentLocation)
+        // console.log(pageTitle)
+        // if(currentLocation.indexOf('spill-kits') != -1) {
+        //     pageTitle.innerText = 'Spill Kits';
+        // };
     </script>
-{% endblock %} -->
+{% endblock %}
