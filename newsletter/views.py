@@ -3,8 +3,10 @@ from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail, EmailMultiAlternatives
 from django.template.loader import get_template
+from django.http import HttpResponse
 from .models import NewsletterSubscriber
 from .forms import NewsletterSubscriberForm
+from .admin import NewsletterExport
 
 
 def display_newsletter_fom(request):
@@ -69,3 +71,14 @@ def unsubcribe_newsletter(request):
     template = 'newsletter/unsubscribe.html'
 
     return render(request, template, context)
+
+
+def export_newsletter(request, format):
+    newsletter_export = NewsletterExport()
+    dataset = newsletter_export.export()
+    if format == 'csv':
+        dataset_format = dataset.csv
+
+    response = HttpResponse(dataset_format, content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=newsletter.csv'
+    return response

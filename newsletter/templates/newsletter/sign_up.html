@@ -7,15 +7,24 @@
         <h2 class="product-heading">Newsletter Sign Up</h2>
     </div>
 
-        <div class="col-10 col-md-6 mx-auto">
-            <form method="POST" class="form mb-2">
-                {% csrf_token %}
-                {{ form|crispy}}
-                <div class="text-start">
-                    <input type="submit" class="my-3 btn add-to-btn">
-                </div>
-            </form>
-        </div>
+    <div class="col-10 col-md-6 mx-auto">
+        <form method="POST" class="form mb-2">
+            {% csrf_token %}
+            {{ form|crispy}}
+            <div class="text-start">
+                <input type="submit" class="my-3 btn add-to-btn">
+            </div>
+        </form>
     </div>
+    {% if request.user.is_authenticated %}
+    {% if request.user.is_superuser %}
+        <div class="col-10 col-md-6 mx-auto text-center my-5">
+            <p><small>You are seeing this because you are an admin user</small></p>
+            <p>To export all newsletter subscribers</p>
+            <a href="{% url 'export' 'csv' %}" class="btn add-to-btn">Export CSV</a>
+        </div>
+    {% endif %}
+    {% endif %}
+
 </div>
 {% endblock %}

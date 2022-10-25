@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    # Other Apps
     'crispy_forms',
     'storages',
     'ckeditor',
+    'import_export',
+    # Created Apps
     'home',
     'products',
     'bag',
