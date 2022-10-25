@@ -34,10 +34,10 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=80, blank=True)
-    review = models.TextField(max_length=400, blank=True)
+    review = models.TextField(max_length=1000, blank=True)
     rating = models.FloatField()
     status = models.BooleanField(default=True)
     date_created = models.DateTimeField(auto_now_add=True)
