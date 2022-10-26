@@ -707,3 +707,15 @@ ul.thumb li img {
     height: 80px;
     border: 1px solid var(--chem-white);
 }
+
+.review-login:hover {
+    color: var(--chem-green);
+}
+
+.review-card {
+    background-color: var(--chem-white);
+    padding: 20px;
+    border-radius: 5px;
+    border: 2px solid var(--chem-green);
+    margin-bottom: 20px;
+}

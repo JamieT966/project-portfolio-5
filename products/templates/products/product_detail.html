@@ -101,13 +101,11 @@
 
 
     <div class="row mx-auto">
-        <div class="col-lg-6">
-            <h4 class="navy-text">Customer Reviews</h4>
-
+        <div class="col-10 col-lg-6">
             <form action="{% url 'add_review' product.id %}" method="POST">
                 {% csrf_token %}
                 
-                <h5 class="green-text mb-3">Have you used this product?</h5>
+                <h5 class="green-text my-4">Have you used this product?</h5>
                 <div>
                     <!-- Rating out of 5 stars -->
                     <label class="mb-2">What rating would you give it?</label>
@@ -135,16 +133,25 @@
 
                     <!-- Submit Button -->
                     {% if user.is_authenticated %}
-                        {% if order in orders %}
                         <input type="submit" class="btn add-to-btn my-2" value="Leave Review">
-                        {% else %}
-                            <p>You must purchase this product to post a review.</p>
-                        {% endif %}
                     {% else %}
-                    <p>You must be logged in to post a review. <span><a href="{% url 'login' %}">Login now</a></span></p>
+                        <p>You must be logged in to post a review. <span><a class="green-text text-decoration-none review-login" href="{% url 'account_login' %}">Login Here.</a></span></p>
                     {% endif %}
                 </div>
             </form>
+        </div>
+
+        <div class="col-12 col-md-10 col-lg-6">
+            <h5 class="green-text my-4 ms-5 text-start">Customer Reviews</h5>
+            {% for review in reviews %}
+            <div class="mx-5 review-card text-start navy-text">
+                
+                <p class="green-text"><strong>{{ review.title }}</strong></p>
+                <p>{{ review.review }}</p>
+                <p>Review by: {{ review.user }} | <span class="green-text"><strong>{{ review.rating }} / 5</strong></span></p>
+                
+            </div>
+            {% endfor %}
         </div>
     </div>
 

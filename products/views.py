@@ -63,12 +63,17 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show individual product details """
+    """
+    A view to show individual product details
+    Also displays all reviews for the specific product
+    """
 
     product = get_object_or_404(Product, pk=product_id)
+    reviews = Review.objects.filter(product=product_id)
 
     context = {
         'product': product,
+        'reviews': reviews
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -154,18 +159,31 @@ def add_review(request, product_id):
     """
     Allows user to submit a product review
     """
-    
+
     if request.method == 'POST':
 
         form = ReviewForm(request.POST)
+        # reviews = Review.objects.get(user__username=request.user.username, pk=product_id)
 
         if form.is_valid():
-            review_data = form.save(commit=False)
+            review = form.save(commit=False)
 
-            review_data.product = Product.objects.get(pk=product_id)
-            review_data.user = UserProfile.objects.get(user__username=request.user.username)
-            review_data.save()
-
+            review.product = Product.objects.get(pk=product_id)
+            review.user = UserProfile.objects.get(user__username=request.user.username)
+            review.save()
+            reviews = Review.objects.filter(product=product_id)
             messages.success(request, 'Thank you! Your review has been submitted.')
 
-        return redirect(reverse('product_detail', kwargs={'product_id':product_id}))
+        return redirect(reverse('product_detail', kwargs={'product_id':product_id,}))
+
+
+# def verify_purchase(user_profile, order_model, product):
+#     """
+#     Verify user has purchased a product, return boolean.
+#     """
+#     user_orders = order_model.objects.filter(user_profile=user_profile)
+#     for order in user_orders:
+#         for item in order.lineitems.all():
+#             if item.product == product:
+#                 return True
+#     return False
