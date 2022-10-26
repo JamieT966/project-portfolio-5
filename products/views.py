@@ -70,10 +70,12 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
+    user = UserProfile.objects.all()
 
     context = {
         'product': product,
-        'reviews': reviews
+        'reviews': reviews,
+        'user': user,
     }
 
     return render(request, 'products/product_detail.html', context)

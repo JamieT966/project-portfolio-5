@@ -108,6 +108,7 @@
                 <h5 class="green-text my-4">Have you used this product?</h5>
                 <div>
                     <!-- Rating out of 5 stars -->
+                    {% if request.user.is_authenticated %}
                     <label class="mb-2">What rating would you give it?</label>
                         <br>
 						<div class="rating">
@@ -132,10 +133,10 @@
                     <textarea name="review" rows="4" class="form-control my-2"></textarea>
 
                     <!-- Submit Button -->
-                    {% if user.is_authenticated %}
                         <input type="submit" class="btn add-to-btn my-2" value="Leave Review">
                     {% else %}
-                        <p>You must be logged in to post a review. <span><a class="green-text text-decoration-none review-login" href="{% url 'account_login' %}">Login Here.</a></span></p>
+                        <p>You must be logged in to post a review.</p>
+                        <a class="btn add-to-btn" href="{% url 'account_login' %}">Login</a>
                     {% endif %}
                 </div>
             </form>
@@ -149,9 +150,16 @@
                 <p class="green-text"><strong>{{ review.title }}</strong></p>
                 <p>{{ review.review }}</p>
                 <p>Review by: {{ review.user }} | <span class="green-text"><strong>{{ review.rating }} / 5</strong></span></p>
-                <a href="{% url 'edit_review' review.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
-                
+
+                {% if request.user.username|lower == review.user|lower %}
+                    <a href="{% url 'edit_review' review.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
+                {% endif %}
+
             </div>
+            {% empty %}
+                <div class="text-start ms-5 my-4">
+                    <p>Sorry, nobody has left a review for this product yet.</p>
+                </div>
             {% endfor %}
         </div>
     </div>
