@@ -7,21 +7,41 @@
         <h2 class="product-heading">Edit Review</h2>
     </div>
 
-    <div class="row mx-auto">
+    <div class="row mx-auto justify-content-center">
         <div class="col-10 col-lg-6">
             <form action="{% url 'edit_review' review.id %}" method="POST">
                 {% csrf_token %}
                 
                 {{ form|crispy }}
-                    <!-- Submit Button -->
-                    <input type="submit" class="btn add-to-btn my-2" value="Leave Review">
-                    <button type="button" class="btn cancel-btn ms-1" data-bs-toggle="modal" data-bs-target="#delete-{{product.id}}">
+                <!-- Submit Button -->
+                <div class="text-end">
+                    <button type="button" class="btn cancel-btn ms-1" data-bs-toggle="modal" data-bs-target="#delete-{{review.id}}">
                         Delete Review
                     </button>
+                    <input type="submit" class="btn add-to-btn my-2" value="Leave Review">
                 </div>
-            </form>
+            </form>  
         </div>
+    </div>
+</div>
 
+<!-- Modal -->
+<div class="modal fade" id="delete-{{review.id}}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5 navy-text" id="exampleModalLabel">Product Deletion</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-start">
+                <p class="navy-text">You are about to delete this product permanently. Are you sure?</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Delete Permanently</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -211,7 +211,7 @@ def edit_review(request, review_id):
 
 
 @login_required
-def delete_product(request, product_id):
+def delete_review(request, review_id):
     """
     Allows admin user to delete a product from store.
     """
@@ -219,7 +219,8 @@ def delete_product(request, product_id):
     product_id = review.product.id
     review.delete()
     messages.success(request, 'Review deleted!')
-    return redirect(reverse('product_detail', kwargs={'product_id': review_id.product.id}))
+    return redirect(reverse('products'))
+
 
 
 # def verify_purchase(user_profile, order_model, product):
