@@ -71,6 +71,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.filter(product=product_id)
     user = UserProfile.objects.all()
+    category = Category.objects.all()
 
     context = {
         'product': product,
@@ -222,8 +223,6 @@ def delete_review(request, review_id):
     review.delete()
     messages.success(request, 'Review deleted!')
     return redirect(reverse('products'))
-
-
 
 # def verify_purchase(user_profile, order_model, product):
 #     """
