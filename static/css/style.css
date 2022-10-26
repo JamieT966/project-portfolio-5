@@ -716,6 +716,9 @@ ul.thumb li img {
     background-color: var(--chem-white);
     padding: 20px;
     border-radius: 5px;
-    border: 2px solid var(--chem-green);
+    /* border: 2px solid var(--chem-green); */
     margin-bottom: 20px;
+    box-shadow: -8px 7px 5px 0px rgba(152,194,68,0.91);
+    -webkit-box-shadow: -8px 7px 5px 0px rgba(152,194,68,0.91);
+    -moz-box-shadow: -8px 7px 5px 0px rgba(152,194,68,0.91);
 }
