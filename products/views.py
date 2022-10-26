@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category, Review
+from .models import Product, Category, Review, UserProfile
 from .forms import ProductForm, ReviewForm
 
 
@@ -149,23 +149,23 @@ def delete_product(request, product_id):
     return redirect(reverse('products'))
 
 
+@login_required
 def add_review(request, product_id):
     """
     Allows user to submit a product review
     """
-    # review_id = get_object_or_404(Review, pk=product_id)
-    form = ReviewForm(request.POST)
-
+    
     if request.method == 'POST':
 
+        form = ReviewForm(request.POST)
+
         if form.is_valid():
-            review_data = Review()
-            review_data.title = form.cleaned_data['title']
-            review_data.rating = form.cleaned_data['rating']
-            review_data.review = form.cleaned_data['review']
-            review_data.product_id = product_id
-            review_data.user_id = request.user.id
+            review_data = form.save(commit=False)
+
+            review_data.product = Product.objects.get(pk=product_id)
+            review_data.user = UserProfile.objects.get(user__username=request.user.username)
             review_data.save()
+
             messages.success(request, 'Thank you! Your review has been submitted.')
 
-        return redirect(reverse('products'))
+        return redirect(reverse('product_detail', kwargs={'product_id':product_id}))
