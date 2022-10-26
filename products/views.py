@@ -177,6 +177,51 @@ def add_review(request, product_id):
         return redirect(reverse('product_detail', kwargs={'product_id':product_id,}))
 
 
+@login_required
+def edit_review(request, review_id):
+    """
+    Allows admin user to edit a review in store.
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    review_id = Review.objects.get(pk=review_id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = UserProfile.objects.get(user__username=request.user.username)
+            review.save()
+            messages.success(request, 'Review updated successfully')
+            return redirect(reverse('product_detail', kwargs={'product_id': review_id.product.id}))
+
+        else:
+            messages.error(request, 'Failed to update review. Please ensure all details are valid.')
+    else:
+        form = ReviewForm(instance=review)
+        review.user = UserProfile.objects.get(user__username=request.user.username)
+        messages.info(request, f'You are editing a review by {review.user}')
+
+    template = 'products/edit_review.html'
+    context = {
+        'form': form,
+        'review': review,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_product(request, product_id):
+    """
+    Allows admin user to delete a product from store.
+    """
+    review = get_object_or_404(Review, pk=review_id)
+    product_id = review.product.id
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('product_detail', kwargs={'product_id': review_id.product.id}))
+
+
 # def verify_purchase(user_profile, order_model, product):
 #     """
 #     Verify user has purchased a product, return boolean.

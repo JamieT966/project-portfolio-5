@@ -149,6 +149,7 @@
                 <p class="green-text"><strong>{{ review.title }}</strong></p>
                 <p>{{ review.review }}</p>
                 <p>Review by: {{ review.user }} | <span class="green-text"><strong>{{ review.rating }} / 5</strong></span></p>
+                <a href="{% url 'edit_review' review.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
                 
             </div>
             {% endfor %}
