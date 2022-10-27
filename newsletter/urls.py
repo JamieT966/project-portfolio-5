@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
     path('sign-up/', views.display_newsletter_fom, name='newsletter'),
     path('unsubcribe/', views.unsubcribe_newsletter, name='unsubcribe'),
-    path('<str:format>/', views.export_newsletter, name='export'),
+    path('export/<str:format>/', views.export_newsletter, name='export'),
 ]
