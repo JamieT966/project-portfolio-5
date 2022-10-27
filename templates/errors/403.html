@@ -4,11 +4,11 @@
 {% block content %}
 <div class="cover">
     <div class="col text-center py-3">
-        <h2 class="product-heading">Error 404: Page Not Found</h2>
+        <h2 class="product-heading">Error 403: Access Denied</h2>
     </div>
     <div class="mx-auto text-center">
-        <img src="{{ MEDIA_URL }}404-page.png" alt="404 page not found">
-        <p class="off-white-text">Sorry, we can't seem to find that page.</p>
+        <img src="{{ MEDIA_URL }}403-page.png" alt="403 error forbidden">
+        <p class="off-white-text">Sorry, we can't let you see that.</p>
 
         <a href="{% url 'products' %}" class="btn add-to-btn mt-3 img-404">
             <span>
