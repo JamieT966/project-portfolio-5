@@ -1,1 +1,1 @@
-Thanks for signing up to the Hazmat Bulletin. If you did not mean to sign up please unsubsribe here: https://chem-eshop.herokuapp.com/newsletter/unsubscribe
+Thanks for signing up to the Hazmat Bulletin. If you did not mean to sign up please unsubsribe here: https://chem-eshop.herokuapp.com/newsletter/unsubscribe/

@@ -78,7 +78,8 @@ def export_newsletter(request, format):
     dataset = newsletter_export.export()
     if format == 'csv':
         dataset_format = dataset.csv
-
-    response = HttpResponse(dataset_format, content_type='text/csv')
-    response['Content-Disposition'] = 'attachment; filename=newsletter.csv'
+    else:
+        dataset_format = dataset.xls
+    response = HttpResponse(dataset_format, content_type=f'text/{format}')
+    response['Content-Disposition'] = f'attachment; filename=newsletter_subscribers.{format}'
     return response
