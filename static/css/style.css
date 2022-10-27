@@ -169,6 +169,17 @@ a:focus {
     color: var(--chem-navy);
 }
 
+/* About us section */
+
+.about-us-img-container {
+    background: url('/media/about-image.png') no-repeat center center;
+    height: 350px;
+}
+
+.navy-bg {
+    background-color: var(--chem-navy);
+}
+
 /* Grow on hover animation */
 .grow { 
     transition: all .2s ease-in-out; 
