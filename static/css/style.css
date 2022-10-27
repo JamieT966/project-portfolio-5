@@ -700,6 +700,12 @@ footer {
     border-top: 2px solid var(--chem-green);
 }
 
+.footer-link {
+    font-size: 150%;
+    padding-top: 20px;
+    letter-spacing: 20px;
+}
+
 /* Contact Page */
 
 .contact-map {
