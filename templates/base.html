@@ -33,8 +33,9 @@
 
         {% block extra_js %}
         {% endblock %}
-
-        <title>Chem-eShop {% block extra_title %}{% endblock %}</title>
+        <meta name="description" content="Online store Chem-eShop set up by Chemstore to sell hazardous chemical safety products">
+        <meta name="keywords" content="Chemstore, chemical, safety, chemical safety, ppe, spill kits, spill trays, safety cabinets, site safety hazardous material storage" >
+        <title>Chem-eShop - {% block extra_title %}{% endblock %}</title>
     </head>
     <body>
         <div class="header">
@@ -74,13 +75,15 @@
                             </ul>
                           </li>
                         </ul>
+                    <!-- Bag green bubble with number of items in it -->
                     <li class="nav-item ms-2">
                         <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                     </li>
                     {% if product_count != 0 %}
                     <p class="cart-total me-2">{{ product_count }}</p>
                     {% else %}
-                    <p class="cart-total me-2 d-none">0</p>
+                    <p class="cart-total d-none"></p>
+                    <p class="me-2"> </p>
                     {% endif %}
                 </ul>
                 <!-- Navigation -->
@@ -138,7 +141,8 @@
                         {% if product_count != 0 %}
                         <p class="cart-total me-2">{{ product_count }}</p>
                         {% else %}
-                        <p class="cart-total me-2 d-none">0</p>
+                        <p class="cart-total d-none"></p>
+                        <p class="me-2"> </p>
                         {% endif %}
                     </ul>
                 </div>
@@ -190,6 +194,7 @@
         {% endblock %}
         </div>
 
+        <!-- Footer Address -->
         <footer class="pt-1 footer">
             <div class="row mx-auto mt-3 text-center off-white-text footer-size">
                 <div class="col-12 col-md-3 text-md-start ps-3">
@@ -200,7 +205,7 @@
                     <p><i class="fa-solid fa-globe me-1 green-text"></i> <a class="off-white-text text-decoration-none" href="www.chemstore.ie" aria-label="link takes you to the chemstore website">www.chemstore.ie</a></p>
                     <hr class="my-3 d-block d-md-none footer-break">
                 </div>
-
+                <!-- Footer site links to products -->
                 <div class="col-12 col-md-3 text-md-start font-bold">
                     <h5 class="off-white-text mb-3 footer-headings">Products</h5>
                     <a class="dropdown-item" href="{% url 'products' %}?category=ppe"><p class="mb-1">PPE</p></a>
@@ -211,6 +216,7 @@
                     <hr class="my-3 d-block d-md-none footer-break">
                 </div>
 
+                <!-- Footer site links to account -->
                 <div class="col-12 col-md-3 text-md-start">
                     <h5 class="off-white-text mb-3 footer-headings">Account</h5>
                     {% if request.user.is_authenticated %}
@@ -227,25 +233,32 @@
                         <hr class="my-3 d-block d-md-none footer-break">
                 </div>
 
-                <div class="col-12 col-md-3 py-3 pe-5">
+                <!-- Chemstore Logo -->
+                <div class="col-12 col-md-3 py-3 pe-md-5">
                     <a href="/">
                         <img src="{% static 'media/chemstore-logo.png' %}" class="footer-logo" alt="Chem-eShop logo">
                     </a>
-
+                    <!-- Newsletter sign up -->
                     <hr>
                     <a class="newsletter-sign-up" href="{% url 'newsletter' %}">
                         <h6>To sign up to our newsletter, click here!</h6>
                     </a>
+                    <!-- Social links -->
                     <div>
-                        <a href="https://www.instagram.com/chemstoregroupire/" target="_blank" rel="noopener" aria-label="Opens the Chemstore Instagram page in a new tab."><i class="footer-link green-text fa-brands fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/chemstoregroupire/" target="_blank" rel="noopener" aria-label="Opens the Chemstore Facebook page in a new tab."><i class="footer-link green-text fa-brands fa-facebook"></i></a>
                         <a href="https://www.linkedin.com/company/chemstore-group" target="_blank" rel="noopener" aria-label="Opens the Chemstore LinkedIn page in a new tab."><i class="footer-link green-text fab fa-linkedin-in"></i></a>
                         <a href="https://twitter.com/chemstore" target="_blank" rel="noopener" aria-label="Opens the Chemstore Twitter page in a new tab."><i class="footer-link green-text fab fa-twitter"></i></a>
                     </div>
-                </div>        
+                </div>
+                <!-- Privacy Policy -->
+                <div class="col-12 m-0 p-1 text-center">
+                    <small><a class="green-text text-decoration-none" href="https://www.privacypolicygenerator.info/live.php?token=jism7W5jD6YXxe8Cvu9gp6LO2OONok4j" target="_blank">Privacy Policy</a></small>
+                </div>       
             </div>
         </footer>
 
         {% block postloadjs %}
+        <!-- js for toasts -->
         <script type="text/javascript">
             var toastElList = [].slice.call(document.querySelectorAll('.toast'));
             var toastList = toastElList.map(function (toastEl) { 
@@ -253,7 +266,7 @@
                 toastList.forEach(toast => toast.show());
         </script>
         {% endblock %}
-
+        <!-- js file for search overlay -->
         <script src="{% static 'js/script.js' %}"></script>
     </body>
 </html>

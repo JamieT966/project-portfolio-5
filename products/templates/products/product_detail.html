@@ -1,12 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_meta %}
+    <meta name="description" content="{{ product.description|truncatechars:300 }}">
+    <meta name="keywords" content="{{ product.name }}" >
+{% endblock %}
+
+{% block extra_title %}{{ product.name }}{% endblock %}
+
 {% block content %}
 <div class="cover">
     <div class="col text-center py-3">
         <h2 class="product-heading"></h2>
     </div>
-
+    <!-- Product Detail Container -->
     <div class="container-fluid text-center">
         <div class="row px-4 d-flex justify-content-center product-detail-box mx-auto">
             <div class="col-md-6">
@@ -82,7 +89,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Button to go back to all products page -->
                         <div class="col-12 ms-4 text-start">
                             <a href="{% url 'products' %}" class="btn keep-shopping-btn mt-5">
                                 <span>
@@ -90,6 +97,7 @@
                                 </span>
                                 <span>Keep Shopping</span>
                             </a>
+                            <!-- Button that adds product to bag -->
                             <input type="submit" class="btn add-to-btn mt-5" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -99,12 +107,11 @@
         </div>
     </div>
 
-
+    <!-- User Review Form -->
     <div class="row mx-auto">
         <div class="col-10 col-lg-6">
             <form action="{% url 'add_review' product.id %}" method="POST">
                 {% csrf_token %}
-                
                 <h5 class="green-text my-4">Have you used this product?</h5>
                 <div>
                     <!-- Rating out of 5 stars -->
@@ -142,10 +149,13 @@
             </form>
         </div>
 
+        <!-- Break comes in when screen is at small size -->
+        <hr class="my-3 d-block d-lg-none footer-break">
+        <!-- User reviews -->
         <div class="col-12 col-md-10 col-lg-6">
-            <h5 class="green-text my-4 ms-5 text-start">What did our customers think of it?</h5>
+            <h5 class="green-text my-4 ms-lg-5 text-start">What did our customers think of it?</h5>
             {% for review in reviews %}
-            <div class="mx-5 review-card text-start navy-text">
+            <div class="ms-mx-5 review-card text-start navy-text">
                 
                 <p class="green-text"><strong>{{ review.title }}</strong></p>
                 <p>{{ review.review }}</p>
@@ -157,7 +167,7 @@
 
             </div>
             {% empty %}
-                <div class="text-start ms-5 my-4">
+                <div class="text-start ms-lg-5 my-4">
                     <p>Sorry, nobody has left a review for this product yet.</p>
                 </div>
             {% endfor %}
@@ -190,7 +200,7 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
-
+<!-- Javascript for modal -->
 <script type="text/javascript">
     const myModal = document.getElementById('myModal')
     const myInput = document.getElementById('myInput')
