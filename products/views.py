@@ -9,7 +9,7 @@ from .forms import ProductForm, ReviewForm
 
 def all_products(request):
     """
-    Displays a single product page
+    Displays a page with all products
     """
 
     products = Product.objects.all()
