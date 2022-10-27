@@ -31,5 +31,5 @@ class UserProfileForm(forms.ModelForm):
                 else:
                     placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-input-elements my-1'
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input my-2'
             self.fields[field].label = False

@@ -224,6 +224,7 @@ def delete_review(request, review_id):
     messages.success(request, 'Review deleted!')
     return redirect(reverse('products'))
 
+
 # def verify_purchase(user_profile, order_model, product):
 #     """
 #     Verify user has purchased a product, return boolean.

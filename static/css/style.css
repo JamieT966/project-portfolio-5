@@ -539,6 +539,11 @@ select option[value=""] {
     color: var(--chem-navy);
 }
 
+.order-history-link:hover,
+.order-history-link:focus {
+    color: var(--chem-green);
+}
+
 #id_default_country,
 #id_default_country option:not(:first-child) {
     color: var(--chem-navy);
