@@ -55,36 +55,37 @@
                     <li class="nav-item mx-2" onclick="unhideSearch()">
                         <a class="nav-link"><i id='search-icon-btn' class="fa-solid fa-magnifying-glass"></i></a>
                     </li>
+                </ul>
+                <div class="d-flex d-md-none">
                     <li class="navbar-nav">
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user"></i>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
-                            {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-                            {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-                            {% endif %}
-                                <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
-                        </ul>
+                            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                    <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
+                                {% endif %}
+                                    <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
+                                    <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                                {% else %}
+                                    <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                                    <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                                {% endif %}
+                                    <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
+                            </ul>
+                        </li>
+                        <!-- Bag green bubble with number of items in it -->
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                        </li>
+                        {% if product_count != 0 %}
+                        <li class="cart-total cart-total-sm me-2">{{ product_count }}</li>
+                        {% else %}
+                        <li class="cart-total d-none"></li>
+                        <li class="me-2"> </li>
+                        {% endif %}
                     </li>
-                    <!-- Bag green bubble with number of items in it -->
-                    <li class="nav-item ms-2">
-                        <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
-                    </li>
-                    {% if product_count != 0 %}
-                    <li class="cart-total me-2">{{ product_count }}</li>
-                    {% else %}
-                    <li class="cart-total d-none"></li>
-                    <li class="me-2"> </li>
-                    {% endif %}
-                </ul>
+                </div>
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto d-flex">
@@ -118,15 +119,15 @@
                                 <ul class="dropdown-menu dropdown-menu-end">
                                     {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
+                                        <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
                                     {% endif %}
-                                        <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                        <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
+                                        <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
                                     {% else %}
-                                        <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                        <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                        <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                                        <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
                                     {% endif %}
-                                        <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
+                                        <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
                                 </ul>
                             </li>
                         </div>
@@ -134,10 +135,10 @@
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                         </li>
                         {% if product_count != 0 %}
-                        <p class="cart-total me-2">{{ product_count }}</p>
+                        <li class="cart-total me-2">{{ product_count }}</li>
                         {% else %}
-                        <p class="cart-total d-none"></p>
-                        <p class="me-2"> </p>
+                        <li class="cart-total d-none"></li>
+                        <li class="me-2"> </li>
                         {% endif %}
                     </div>
                 </div>

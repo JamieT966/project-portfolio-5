@@ -163,6 +163,11 @@ input[name='q']::placeholder {
     font-size: 14px;
 }
 
+.cart-total-sm {
+    top: -10px;
+    position: relative;
+}
+
 .nav-link {
     padding-right: 0 !important;
 }
