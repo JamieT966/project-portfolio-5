@@ -173,6 +173,8 @@ There is also a link to the privacy policy at the bottom.
 
 The all products page displays every product on the store as cards in rows of max 3. This page has a sort by field that allows a user to sort by price, name, rating and category. The produuct cards display the product image, title, price, rating and category below it.
 
+The rating shown is an average of all user ratings for that product.
+
 If the user is an admin they will see two icon buttons to edit and delete a product.
 
 ![All Products Page](documentation/images/product-page.png)
@@ -198,6 +200,8 @@ When the delete button is clicked the admin user will have a modal appear to con
 
 The product detail page features an image to the left and then on the right there is the product title, price, rating, description, the quantity and then two buttons 'Keep Shopping', that will take the user back to the products page. The 'Add to Bag' button will add the product to the user's bag.
 
+The rating shown is an average of all user ratings for that product.
+
 If the user is an admin they will again see two icon buttons to edit and delete a product.
 
 ![Product Detail Page](documentation/images/product-page.png)
@@ -215,7 +219,7 @@ If the product has sizes a sizes option will also appear on the product detail p
 
 Below the product container on the product detail page is the reviews section. When a user is signed in a product review form will show on the left side. The user reviews are then displayed on the right. These reviews have the review title, body, the user it was left by and the rating they gave.
 
-Only the user that made the review has the ability to edit or delete it.
+Only the user that made the review or an admin has the ability to edit or delete it.
 
 ![Product Reviews](documentation/images/product-reviews.png)
 

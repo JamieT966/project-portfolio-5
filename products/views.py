@@ -166,7 +166,6 @@ def add_review(request, product_id):
     if request.method == 'POST':
 
         form = ReviewForm(request.POST)
-        # reviews = Review.objects.get(user__username=request.user.username, pk=product_id)
 
         if form.is_valid():
             review = form.save(commit=False)

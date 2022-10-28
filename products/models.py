@@ -52,15 +52,15 @@ class Product(models.Model):
         avg=0
         if reviews["avarage"] is not None:
             avg=float(reviews["avarage"])
-        return avg
+        return round(avg, 2)
 
 
 class Review(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='reviews')
     product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE, related_name='reviews')
-    title = models.CharField(max_length=80, blank=True)
-    review = models.TextField(max_length=1000, blank=True)
-    rating = models.IntegerField(choices=RATING_OPTIONS, default=3)
+    title = models.CharField(max_length=50, blank=True)
+    review = models.TextField(max_length=500, blank=True)
+    rating = models.FloatField(choices=RATING_OPTIONS, default=5, validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
     status = models.BooleanField(default=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)

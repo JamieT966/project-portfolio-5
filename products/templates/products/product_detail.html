@@ -115,7 +115,6 @@
                 <h5 class="green-text my-4">Have you used this product?</h5>
                 <div>
                     <!-- Rating out of 5 stars -->
-
                     {% if request.user.is_authenticated %}
                     <label class="mb-2">What rating would you give it?</label>
                         <br>
@@ -155,17 +154,30 @@
         <!-- User reviews -->
         <div class="col-12 col-md-10 col-lg-6">
             <h5 class="green-text my-4 ms-lg-5 text-start">What did our customers think of it?</h5>
-            {% for review in reviews %}
+            {% for review in reviews|dictsortreversed:"date_updated" %}
             <div class="ms-mx-5 review-card text-start navy-text">
-                
-                <p class="green-text"><strong>{{ review.title }}</strong></p>
+                <div class="row">
+                    <div class="col-7 p-0 m-0">
+                        <p class="ms-2 ps-1 text-start green-text"><strong>{{ review.title }}</strong></p>
+                    </div>
+                    <div class="col-5 text-end">
+                        <small>
+                            {% if review.date_updated %}
+                                {{ review.date_updated }}
+                            {% else %}
+                                {{ review.date_created }}
+                            {% endif %}
+                        </small>
+                    </div>
+                </div>
                 <p>{{ review.review }}</p>
                 <p>Review by: {{ review.user }} | <span class="green-text"><strong><i class="fas fa-star mr-1"></i>  {{ review.rating }} / 5</strong></span></p>
 
-                {% if request.user.username|lower == review.user|lower %}
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'edit_review' review.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
+                {% elif request.user.username|lower == review.user|lower %}
                     <a href="{% url 'edit_review' review.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
                 {% endif %}
-
             </div>
             {% empty %}
                 <div class="text-start ms-lg-5 my-4">
