@@ -73,7 +73,6 @@
                                 {% endif %}
                                     <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
                             </ul>
-
                         <!-- Bag green bubble with number of items in it -->
                         <li class="nav-item ms-2">
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
@@ -83,7 +82,6 @@
                         <li class="cart-total d-none"></li>
                         <li class="me-2"> </li>
                         {% endif %}
-                    </li>
                 </menu>
                 <!-- Navigation -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -101,7 +99,6 @@
                               <li><a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets">Safety Cabinets</a></li>
                               <li><a class="dropdown-item" href="{% url 'products' %}?category=site-safety">Site Safety</a></li>
                             </ul>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link me-5 ps-2" href="{% url 'products' %}">All Products</a>
                         </li>
@@ -129,7 +126,6 @@
                                     {% endif %}
                                         <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
                                 </ul>
-                            </li>
                         <li class="nav-item ms-2 bag-icon">
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                         </li>
