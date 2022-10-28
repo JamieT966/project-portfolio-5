@@ -257,18 +257,41 @@ Following a successful checkout process the user will be taken to a success scre
 
 #### Profile Page
 
+On the my profile page the logged in user can see their saved delivery details to the left and their order history on the right. Clicking the green highlighted order number will take the user to the order confirmation history with an alert that they are viewing an old order history.
+
+![Mockup](documentation/images/profile-page.png)
 
 
+#### Contact Page
+
+The contact page has an embedded Google Map on the left of the location of Chemstore. Next to it is a contact form with the option to select a product if their query relates to a particular product.
+
+![Mockup](documentation/images/contact-page.png)
 
 
+#### Newsletter Page
+
+The newsletter sign up page features a simple input field for users to type their email address and be signed up. When submitted the user will get an alert saying that they are now signed up and receive a confirmation email.
+
+![Mockup](documentation/images/newsletter.png)
 
 
+#### Unsubscribe Page
+
+Near identical to the sign up page, the unsubscribe page has a single input field to delete their email address from our database. When submitted the user will get an alert saying that they are now unsubsribed and receive a confirmation email.
+
+![Mockup](documentation/images/unsubscribe.png)
 
 
+#### Newsletter Admin Page
 
+When an admin user navigates to the user page he will also see an export button. When clicked a CSV file of all newsletter sign ups will be exported for use on Chemstore's email marketing service, Campaign Monitor.
+
+![Mockup](documentation/images/newsletter-admin.png)
 
 
 ### Features which could be implemented in the future
+
 
 
 ## Design
