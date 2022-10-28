@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from profiles.models import UserProfile
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Category(models.Model):
@@ -38,7 +39,7 @@ class Review(models.Model):
     product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.CASCADE)
     title = models.CharField(max_length=80, blank=True)
     review = models.TextField(max_length=1000, blank=True)
-    rating = models.FloatField()
+    rating = models.FloatField(validators=[MinValueValidator(0.0), MaxValueValidator(5.0)])
     status = models.BooleanField(default=True)
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
