@@ -185,10 +185,12 @@
                     <button type="button" class="btn add-to-btn">Return to Profile</button>
                 </a>
             {% else %}
+            <div class="text-center">
                 <p class="off-white-text text-center">To view more Chemstore products click the button below.</p>
-                <a class="d-flex justify-content-center text-decoration-none" href="{% url 'products' %}">
-                    <button type="button" class="btn add-to-btn">View Products</button>
+                <a class="btn add-to-btn text-decoration-none" href="{% url 'products' %}">
+                    View Products
                 </a>
+            </div>
             {% endif %}
         </div>
         
