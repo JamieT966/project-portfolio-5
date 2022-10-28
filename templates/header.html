@@ -1,0 +1,74 @@
+<div class="header row mx-auto">
+    <nav class="navbar navbar-expand-md">
+        <!-- Logo -->
+            <a href="/">
+                <img src="{% static 'media/chemstore-logo.png' %}" class="float-start logo" alt="Chem-eShop logo">
+            </a>
+        <!-- Taken from Bootstrap module -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            aria-label="Hamburger menu button, opens the nav bar on smaller devices"
+            data-bs-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto d-flex">
+                <li class="nav-item ps-2">
+                    <a class="nav-link" href="{% url 'products' %}?category=ppe">PPE</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle ps-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Categories
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'products' %}?category=spill-kits">Spill Kits</a></li>
+                      <li><a class="dropdown-item" href="{% url 'products' %}?category=spill-trays">Spill Trays</a></li>
+                      <li><a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets">Safety Cabinets</a></li>
+                      <li><a class="dropdown-item" href="{% url 'products' %}?category=site-safety">Site Safety</a></li>
+                    </ul>
+                <li class="nav-item">
+                    <a class="nav-link me-5 ps-2" href="{% url 'products' %}">All Products</a>
+                </li>
+            </ul>
+
+            <!-- Search, Account and Bag Icons for larger screens-->
+            <ul class="navbar-nav ms-auto d-flex flex-row pe-3">
+                <li class="nav-item mx-2" onclick="unhideSearch()">
+                    <a class="nav-link"><i id='search-icon-btn' class="fa-solid fa-magnifying-glass"></i></a>
+                </li>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a>
+                            {% endif %}
+                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                                <a href="{% url 'contact' %}" class="dropdown-item">Contact</a>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                <li class="nav-item ms-2 bag-icon">
+                    <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                </li>
+                {% if product_count != 0 %}
+                <p class="cart-total me-2">{{ product_count }}</p>
+                {% else %}
+                <p class="cart-total d-none"></p>
+                <p class="me-2"> </p>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</div>
