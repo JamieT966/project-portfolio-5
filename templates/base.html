@@ -77,7 +77,6 @@
                         <!-- Bag green bubble with number of items in it -->
                         <li class="nav-item ms-2">
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
-                        </li>
                         {% if product_count != 0 %}
                         <li class="cart-total cart-total-sm me-2">{{ product_count }}</li>
                         {% else %}
@@ -131,7 +130,6 @@
                                         <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
                                 </ul>
                             </li>
-                        </li>
                         <li class="nav-item ms-2 bag-icon">
                             <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
                         </li>
