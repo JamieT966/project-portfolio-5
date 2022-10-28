@@ -202,7 +202,7 @@ if 'USE_AWS' in os.environ:
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
-# Rich Text Editor 
+# Rich Text Editor
 CKEDITOR_CONFIGS = {
     'default': {
          'height': 400,
