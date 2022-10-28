@@ -61,7 +61,7 @@
                     <div class="text-start product-price px-1">
 
                         <!-- Product Price -->
-                        <p class="navy-text">€{{ product.price }}</p>
+                        <p class="m-0 pb-2 navy-text">€{{ product.price }}</p>
 
                         <!-- Product Rating -->
                         {% if product.rating %}
@@ -81,7 +81,7 @@
 
                     <!-- Product Category -->
                     {% if product.category %}
-                    <p class="small mt-2 mb-0 text-start">
+                    <p class="small mt-2 mb-0 px-1 text-start">
                         <a class="text-muted text-decoration-none" href="{% url 'products' %}?category={{ product.category.name }}">
                             <i class="fas fa-tag mr-1"></i> {{ product.category.friendly_name }}
                         </a>
