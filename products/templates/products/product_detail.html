@@ -11,7 +11,7 @@
 {% block content %}
 <div class="cover">
     <div class="col text-center py-3">
-        <h2 class="product-heading"></h2>
+        <br>
     </div>
     <!-- Product Detail Container -->
     <div class="container-fluid text-center">
@@ -32,7 +32,7 @@
             <div class="col-md-6">
                 <div class="product-details-container mt-4 ms-4 text-start">
                     <h2 class="product-name">{{ product.name }}</h2>
-                    <p class="lead"><strong>€{{ product.price }}</p></strong> 
+                    <p class="lead"><strong>€{{ product.price }}</strong></p>
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
@@ -214,7 +214,7 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 <!-- Javascript for modal -->
-<script type="text/javascript">
+<script>
     const myModal = document.getElementById('myModal')
     const myInput = document.getElementById('myInput')
 
