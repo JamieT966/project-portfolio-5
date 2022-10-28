@@ -11,10 +11,6 @@ function unhideSearch() {
     });
 }
 
-function hideSearch() {
-    searchDiv.classList.add('d-none')
-}
-
 // Allows user to select sorting criteria, taken from Boutique Ado
 $('#sort-selector').change(function() {
     var selector = $(this);
