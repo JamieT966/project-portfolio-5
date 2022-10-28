@@ -96,11 +96,177 @@ Users can also leave reviews on products, sign up to our newsletter and contact 
     - As an **admin** I want to be able to **export a CSV list of my subscribers** so that I can **can use them in marketing campaigns using tools like Mail Chimp**
 
   </details>    
-  
+
 
 ## Features
 
 ### Existing Features
+
+#### - Header
+
+The header features the Chemstore logo, navigation for products in the centre and three icons to the right, a search icon, an account icon and a bag icon.
+
+![Mockup](documentation/images/header.png)
+
+
+#### - Search Icon and Overlay
+
+The search icon when clicked brings up a search input below, this can be used to search the site for all products. An autofocus was added so when the search icon is clicked the user's type is on the search input.
+
+![Mockup](documentation/images/search-overlay.png)
+
+
+#### Account Dropdown
+
+When clicked the account icon will display a dropdown list. Depending on the logged in status of the site user you will see different links. When the user is logged out they will see 'Register', 'Login' and 'Contact'. If the user is logged in they will see 'My Profile', 'Logout' and 'Contact'. Finally, if an admin user is logged in they will see 'Product Managment', 'My Profile', 'Logout' and 'Contact'.
+
+![Mockup](documentation/images/account-dropdown.png)
+
+
+#### Bag Notification
+
+If the user currently has nothing in their bag they will just see a bag icon. If the user adds a product or products to their bag a green circle/ bubble will appear with the number of items in their bag.
+
+![Mockup](documentation/images/header-bag.png)
+
+
+#### Hero Section
+
+The hero section is quite simple featuring an illustration of an ecommerce style image to the right and an a site intro on the left. The hero section also features a button to 'Shop Now' that takes the user to the all products page.
+
+![Mockup](documentation/images/hero-section.png)
+
+
+#### Product Categories
+
+Below the hero section is a Product Categories section. This section features five cards with an image. Each card will grow on hover and when clicked will take the user to that product category.
+
+![Mockup](documentation/images/product-categories.png)
+
+
+#### About Us Section
+
+Next we have the about us section. Again, another simple section featuring a small word on the company on the right and an image of a chemical safety worker on the right.
+
+![Mockup](documentation/images/about-us.png)
+
+
+#### Our Client Carousel
+
+At the bottom of the homepage is a carousel style section featuring some of Chemstore's previous clients. This has been animated to automatically scroll across the screen.
+
+![Mockup](documentation/images/our-clients.png)
+
+
+#### Footer
+
+Finally the homepage features a footer. This footer is split into four sections. Firstly, the address section, then the products and account links. The fourth part of the footer features the Chemstore logo, a link to sign up to the newsletter below that and then social links.
+
+There is also a link to the privacy policy at the bottom.
+
+![Mockup](documentation/images/footer.png)
+
+
+#### All Products Page
+
+The all products page displays every product on the store as cards in rows of max 3. This page has a sort by field that allows a user to sort by price, name, rating and category. The produuct cards display the product image, title, price, rating and category below it.
+
+If the user is an admin they will see two icon buttons to edit and delete a product.
+
+![Mockup](documentation/images/product-page.png)
+
+
+#### Edit Product
+
+This feature is only available to admin users, when the edit button is clicked whether from the products page or product detail page it will take you to the edit product page.
+
+An alert displays to notify the admin that they are currently editing a product. The edit product page features a rich text editor thanks to django-ckeditor.
+
+![Mockup](documentation/images/edit-product.png)
+
+
+#### Delete Product
+
+When the delete button is clicked the admin user will have a modal appear to confirm if the admin wants to delete the product.
+
+![Mockup](documentation/images/delete-product.png)
+
+
+#### Product Detail Page
+
+The product detail page features an image to the left and then on the right there is the product title, price, rating, description, the quantity and then two buttons 'Keep Shopping', that will take the user back to the products page. The 'Add to Bag' button will add the product to the user's bag.
+
+If the user is an admin they will again see two icon buttons to edit and delete a product.
+
+![Mockup](documentation/images/product-page.png)
+
+User Added to Bag:
+
+![Mockup](documentation/images/add-to-bag.png)
+
+If the product has sizes a sizes option will also appear on the product detail page.
+
+![Mockup](documentation/images/product-with-sizes.png)
+
+
+#### Product Reviews
+
+Below the product container on the product detail page is the reviews section. When a user is signed in a product review form will show on the left side. The user reviews are then displayed on the right. These reviews have the review title, body, the user it was left by and the rating they gave.
+
+Only the user that made the review has the ability to edit or delete it.
+
+![Mockup](documentation/images/product-reviews.png)
+
+
+#### Edit Review Page
+
+When the user clicks the edit button they are taken to a page with the edit form prefilled with their previous details. At the bottom there is two buttons. The first is to 'Delete Review', this will again take the user to a modal again to confirm delete. Then there is an 'Update Review' button that updates the review.
+
+![Mockup](documentation/images/edit-review.png)
+
+
+#### Add Product
+
+As well as admin users having the ability to add products in the django admin they can also add them in the front end site. This page also features a rich text editor. 
+
+![Mockup](documentation/images/add-product.png)
+
+
+#### Bag Page
+
+When the user is ready to progress on to the bag page they can either click the 'Go to Secure Checkout' button on the pop up that appears after adding an item to the bag or by clicking the bag icon.
+
+The bag page features each product as displayed as a line item. The user can edit quantites or remove items from their bag with the buttons displayed.
+
+![Mockup](documentation/images/bag.png)
+
+
+#### Checkout Page
+
+The checkout page has a form to fill out the user's delivery details and card details. On the right is an order summary with the total cost.
+
+![Mockup](documentation/images/checkout.png)
+
+
+#### Checkout Success
+
+Following a successful checkout process the user will be taken to a success screen. There is an alert with the confirmation number and email the confirmation was sent to. This page displays a summary of the order info, details, delivery details and the amount they were charged.
+
+![Mockup](documentation/images/checkout-success.png)
+
+
+#### Profile Page
+
+
+
+
+
+
+
+
+
+
+
 
 ### Features which could be implemented in the future
 

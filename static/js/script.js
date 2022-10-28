@@ -11,7 +11,7 @@ function unhideSearch() {
     });
 }
 
-function hideSearchy() {
+function hideSearch() {
     searchDiv.classList.add('d-none')
 }
 
