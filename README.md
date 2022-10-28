@@ -1,108 +1,144 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1 align="center">Chem-eShop</h1>
 
-Welcome JamieT966,
+[View the live project here](https://chem-eshop.herokuapp.com/)
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+At the beginning of the pandemic, as sellers of PPE, Chemstore Group set up an online ecommerce store on the Shopify platform. While the Shopify platform is great it has its limitations and costs.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+My project features a full ecommerce store that allows users to view chemical safety products. Users are able to fiter them by category, sort by price, name, category, and then add to their bag and checkout securely.
 
-## Gitpod Reminders
+Users can also leave reviews on products, sign up to our newsletter and contact us regarding a product.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Mockup](documentation/images/am-i%20-responsive.png)
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Index – Table of Contents
+* [User Experience (UX)](#user-experience-ux) 
+* [Features](#features)
+* [Design](#design)
+* [Planning](#planning)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
-Another blue button should appear to click: _Open Browser_.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+## User Experience (UX)
 
-A blue button should appear to click: _Make Public_,
+### User stories :
 
-Another blue button should appear to click: _Open Browser_.
+  <details>
+    <summary>Site User Stories</summary>
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+    - As a **site user** I want to be able to **register for an account** so that I can **have a personal account with my delivery details saved**
 
-To log into the Heroku toolbelt CLI:
+    - As a **site user** I want to be able to **login and logout** so that I can **access my profile info**
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+    - As a **site user** I want to be able to **receive an email confirmation after sign up** so that I can **verify my account registration was successful**
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+    - As a **site user** I want to be able to **have a personalised user profile** so that I can **view my order history and delivery information**
 
-------
+    - As a **site user** I want to be able to **leave a product review** so that I can **advise potential customers with my advise**
 
-## Release History
+    - As a **site user** I want to be able to **sign up to a newsletter** so that I can **get the latest news and offers**
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+    - As a **site user ** I want to be able to **unsubscribe for the newsletter ** so that I can **stop receiving emails**
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+    - As a **site user** I can **return to Home after http 404 or 500 response** so that **I feel I am still working within the website and can navigate easily**
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  </details>
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+  <details>
+    <summary>Shopper User Stories</summary>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+    - As a **Shopper** I want to be able to **view a list of products** so that I can **select a product to purchase**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+    - As a **shopper** I want to be able to **view individual products** so that I can **check price, description, images and sizes**
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+    - As a **shopper** I want to be able to **view my total cost** so that I can **I don't spend too much**
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+    - As a **shopper** I want to be able to **sort any list of products** so that I can **easily sort by price, best rated, etc**
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+    - As a **shopper** I want to be able to **sort products into categories** so that I can **split products into categories to make it easier to find what I want**
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+    - As a **shopper** I want to be able to **search a product by name** so that I can **easily find the product I am searching for**
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+    - As a **shopper** I want to be able to **select a specific size** so that I can **I can make sure the product will suit my needs**
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+    - As a **shopper** I want to be able to **view the items in my bag** so that I can **check out my bag contents and know exactly what I am buying**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+    - As a **shopper** I want to be able to **adjust the quantity of items in my bag** so that I can **easily make changes**
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+    - As a **shopper** I want to be able to **enter my card details** so that I can **make a purchase**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+    - As a **shopper** I want to be able to **view my order after I complete a purchase** so that I can **verify I have not made any mistakes**
 
-------
+    - As a **shopper** I want to be able to **receive an email confirmation after making a purchase** so that I can **keep the confirmation for any future needs**
 
-## FAQ about the uptime script
+    - As a **shopper** I want to be able to **contact Chemstore** so that I can **get in touch regarding a product/ issue, etc**
 
-**Why have you added this script?**
+  </details>
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+ <details>
+    <summary>Admin Stories</summary>
 
-**How will this affect me?**
+    - As an **admin** I want to be able to **add a product** so that I can **I can add new products my store**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+    - As an **admin** I want to be able to **edit a product** so that I can **make changes to any product**
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+    - As an **admin** I want to be able to **delete a product** so that I can **remove an item that is no longer for sale**
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+    - As an **admin** I want to be able to **view all messages from the contact form** so that I can **communicate with customers in a timely manner**
 
-**So….?**
+    - As an **admin** I want to be able to **view all messages from the contact form** so that I can **communicate with customers in a timely manner**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+    - As an **admin** I want to be able to **view a list of subscribers in my admin** so that I can **see the amount of subscribers we have**
 
-**Can I opt out?**
+    - As an **admin** I want to be able to **export a CSV list of my subscribers** so that I can **can use them in marketing campaigns using tools like Mail Chimp**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+  </details>    
+  
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+## Features
 
-**Anything more?**
+### Existing Features
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+### Features which could be implemented in the future
 
----
 
-Happy coding!
+## Design
+
+### Wireframes
+
+### Entity-Relationship diagram for DBMS
+
+
+## Planning
+
+## Technologies Used
+
+### Languages Used
+
+### Frameworks, Libraries & Programs Used  
+
+
+## Testing
+
+### Validator Testing 
+
+### Manual Testing Test Cases and Results 
+
+### Known bugs
+
+
+## Deployment
+
+
+## Credits 
+
+### Code 
+
+### Content 
+
+### Media
+
+### Acknowledgments
