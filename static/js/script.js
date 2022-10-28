@@ -1,5 +1,5 @@
 // Allows opening and closing of search button 
-const searchBtn = document.getElementById('search-icon-btn')
+const searchBtn = document.getElementsByClassName('search-icon-btn')
 const closeBtn = document.getElementById('search-close-btn')
 const searchDiv = document.getElementById('search-overlay')
 
@@ -7,7 +7,7 @@ function unhideSearch() {
     searchDiv.classList.toggle('d-none')
     // Taken from stack overflow https://stackoverflow.com/questions/24450553/how-to-make-default-focus-on-the-search-bar-on-a-web-page-as-google-does
     $(function(){
-        $("#search").focus();
+        $(".search").focus();
     });
 }
 
