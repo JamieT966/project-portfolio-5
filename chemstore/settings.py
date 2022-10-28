@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     'profiles',
     'contact',
     'newsletter',
-    'draft_order',
 ]
 
 MIDDLEWARE = [
