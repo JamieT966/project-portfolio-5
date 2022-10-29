@@ -13,12 +13,7 @@
             <form method="POST" action="{% url 'add_product' %}" class="form mb-2" id="add-product-form" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form.media }}
-                {{ form.category|as_crispy_field }}
-                {{ form.sku|as_crispy_field }}
-                {{ form.name|as_crispy_field }}
-                {{ form.description|as_crispy_field }}
-                {{ form.image|as_crispy_field }}
-
+                {{ form|crispy }}
               
                 <div class="text-center mt-3">
                     <a class="btn cancel-btn" href="{% url 'products' %}">Cancel</a>

@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, \
+    redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -93,7 +94,7 @@ def add_product(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
@@ -133,8 +134,8 @@ def edit_product(request, product_id):
         else:
             messages.error(
                 request,
-                'Failed to update product.'
-                'Please ensure all details are valid.')
+                'Failed to update product.\
+                    Please ensure all details are valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -182,11 +183,12 @@ def add_review(request, product_id):
             review.save()
             reviews = Review.objects.filter(product=product_id)
             messages.success(
-                request,
-                'Thank you! Your review has been submitted.')
+                request, 'Thank you! Your review has been submitted.')
 
         return redirect(
-            reverse('product_detail', kwargs={'product_id': product_id, }))
+            reverse(
+                'product_detail',
+                kwargs={'product_id': product_id, }))
 
 
 @login_required
@@ -213,8 +215,7 @@ def edit_review(request, review_id):
         else:
             messages.error(
                 request,
-                'Failed to update review.'
-                'Please ensure all details are valid.')
+                'Failed to update review.Please ensure all details are valid.')
     else:
         form = ReviewForm(instance=review)
         review.user = UserProfile.objects.get(
