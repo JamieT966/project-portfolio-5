@@ -32,3 +32,5 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = 'chemstore.views.handler404'
 handler500 = 'chemstore.views.handler500'
+handler403 = 'chemstore.views.handler403'
+handler405 = 'chemstore.views.handler405'
