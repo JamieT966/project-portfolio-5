@@ -2,262 +2,284 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
 
-        {% block meta %}
-            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta name="description" content="Online store Chem-eShop set up by Chemstore to sell hazardous chemical safety products">
-            <meta name="keywords" content="Chemstore, chemical, safety, chemical safety, ppe, spill kits, spill trays, safety cabinets, site safety hazardous material storage" >
-        {% endblock %}
+<head>
 
-        {% block extra_meta %}
-        {% endblock %}
-        
-        {% block corecss %}
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-        {% endblock %}
+    {% block meta %}
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Online store Chem-eShop set up by Chemstore to sell hazardous chemical safety products">
+    <meta name="keywords" content="Chemstore, chemical, safety, chemical safety, ppe, spill kits, spill trays, safety cabinets, site safety hazardous material storage">
+    {% endblock %}
 
-        {% block extra_css %}
-        {% endblock %}
-        <!-- Favicon -->
-            <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}">
-        <!-- Font Awesome Icons -->
-            <script src="https://kit.fontawesome.com/3083800502.js" crossorigin="anonymous"></script>
-        {% block corejs %}
-            <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
-            <script src="https://js.stripe.com/v3/"></script>
-        {% endblock %}
+    {% block extra_meta %}
+    {% endblock %}
 
-        {% block extra_js %}
-        {% endblock %}
-        <title>Chem-eShop {% block extra_title %}{% endblock %}</title>
-    </head>
-    <body>
-        <div class="header">
-            <nav class="navbar navbar-expand-md">
-                <!-- Logo -->
-                <a href="/">
-                    <img src="{% static 'media/chemstore-logo.png' %}" class="float-start logo" alt="Chem-eShop logo">
-                </a>
-                <!-- Taken from Bootstrap module -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    aria-label="Hamburger menu button, opens the nav bar on smaller devices"
-                    data-bs-target="#navbarSupportedContent">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <!-- Search, Account and Bag Icons for smaller screens-->
-                <ul class="navbar-nav ms-auto d-flex d-md-none flex-row pe-1">
+    {% block corecss %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% endblock %}
+
+    {% block extra_css %}
+    {% endblock %}
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}">
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/3083800502.js" crossorigin="anonymous"></script>
+    {% block corejs %}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    {% endblock %}
+
+    {% block extra_js %}
+    {% endblock %}
+    <title>Chem-eShop {% block extra_title %}{% endblock %}</title>
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-md">
+            <!-- Logo -->
+            <a href="/">
+                <img src="{% static 'media/chemstore-logo.png' %}" class="float-start logo" alt="Chem-eShop logo">
+            </a>
+            <!-- Taken from Bootstrap module -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" aria-label="Hamburger menu button, opens the nav bar on smaller devices" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Search, Account and Bag Icons for smaller screens-->
+            <ul class="navbar-nav ms-auto d-flex d-md-none flex-row pe-1">
+                <li class="nav-item mx-2" onclick="unhideSearch()">
+                    <a class="nav-link"><i class="search-icon-btn fa-solid fa-magnifying-glass"></i></a>
+                </li>
+            </ul>
+            <menu class="d-flex d-md-none">
+                <li class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        {% if request.user.is_authenticated %}
+                        {% if request.user.is_superuser %}
+                        <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
+                        <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                        {% else %}
+                        <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                        <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
+                    </ul>
+                    <!-- Bag green bubble with number of items in it -->
+                <li class="nav-item ms-2">
+                    <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                    {% if product_count != 0 %}
+                <li class="cart-total cart-total-sm me-2">{{ product_count }}</li>
+                {% else %}
+                <li class="cart-total d-none"></li>
+                <li class="me-2"> </li>
+                {% endif %}
+            </menu>
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto d-flex">
+                    <li class="nav-item ps-2">
+                        <a class="nav-link" href="{% url 'products' %}?category=ppe">PPE</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle ps-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=spill-kits">Spill Kits</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=spill-trays">Spill Trays</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets">Safety Cabinets</a></li>
+                            <li><a class="dropdown-item" href="{% url 'products' %}?category=site-safety">Site Safety</a></li>
+                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link me-5 ps-2" href="{% url 'products' %}">All Products</a>
+                    </li>
+                </ul>
+                <!-- Search, Account and Bag Icons for larger screens-->
+                <menu class="navbar-nav ms-auto d-none d-md-flex flex-row pe-3">
                     <li class="nav-item mx-2" onclick="unhideSearch()">
                         <a class="nav-link"><i class="search-icon-btn fa-solid fa-magnifying-glass"></i></a>
                     </li>
-                </ul>
-                <menu class="d-flex d-md-none">
-                    <li class="navbar-nav">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
-                                {% endif %}
-                                    <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                                    <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
-                                {% else %}
-                                    <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                                    <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                                {% endif %}
-                                    <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
-                            </ul>
-                        <!-- Bag green bubble with number of items in it -->
-                        <li class="nav-item ms-2">
-                            <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
-                        {% if product_count != 0 %}
-                        <li class="cart-total cart-total-sm me-2">{{ product_count }}</li>
-                        {% else %}
-                        <li class="cart-total d-none"></li>
-                        <li class="me-2"> </li>
-                        {% endif %}
+                    <li class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                            <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
+                            {% endif %}
+                            <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
+                            <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
+                            {% else %}
+                            <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
+                            <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
+                            {% endif %}
+                            <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
+                        </ul>
+                    <li class="nav-item ms-2 bag-icon">
+                        <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </li>
+                    {% if product_count != 0 %}
+                    <li class="cart-total me-2">{{ product_count }}</li>
+                    {% else %}
+                    <li class="cart-total d-none"></li>
+                    <li class="me-2"> </li>
+                    {% endif %}
                 </menu>
-                <!-- Navigation -->
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto d-flex">
-                        <li class="nav-item ps-2">
-                            <a class="nav-link" href="{% url 'products' %}?category=ppe">PPE</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle ps-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Categories
-                            </a>
-                            <ul class="dropdown-menu">
-                              <li><a class="dropdown-item" href="{% url 'products' %}?category=spill-kits">Spill Kits</a></li>
-                              <li><a class="dropdown-item" href="{% url 'products' %}?category=spill-trays">Spill Trays</a></li>
-                              <li><a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets">Safety Cabinets</a></li>
-                              <li><a class="dropdown-item" href="{% url 'products' %}?category=site-safety">Site Safety</a></li>
-                            </ul>
-                        <li class="nav-item">
-                            <a class="nav-link me-5 ps-2" href="{% url 'products' %}">All Products</a>
-                        </li>
-                    </ul>
-                    <!-- Search, Account and Bag Icons for larger screens-->
-                    <menu class="navbar-nav ms-auto d-none d-md-flex flex-row pe-3">
-                        <li class="nav-item mx-2" onclick="unhideSearch()">
-                            <a class="nav-link"><i class="search-icon-btn fa-solid fa-magnifying-glass"></i></a>
-                        </li>
-                        <li class="collapse navbar-collapse" id="navbarNavDropdown">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa-solid fa-user"></i>
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-end">
-                                    {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                        <li><a href="{% url 'add_product' %}" class="dropdown-item">Add Product</a></li>
-                                    {% endif %}
-                                        <li><a href="{% url 'profile' %}" class="dropdown-item">My Profile</a></li>
-                                        <li><a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a></li>
-                                    {% else %}
-                                        <li><a href="{% url 'account_signup' %}" class="dropdown-item">Register</a></li>
-                                        <li><a href="{% url 'account_login' %}" class="dropdown-item">Login</a></li>
-                                    {% endif %}
-                                        <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
-                                </ul>
-                        <li class="nav-item ms-2 bag-icon">
-                            <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
-                        </li>
-                        {% if product_count != 0 %}
-                        <li class="cart-total me-2">{{ product_count }}</li>
-                        {% else %}
-                        <li class="cart-total d-none"></li>
-                        <li class="me-2"> </li>
-                        {% endif %}
-                    </menu>
-                </div>
-            </nav>
-        </div>
-        <!-- Search overlay -->
-        <div class="d-none" id="search-overlay">
-            <form method="GET" action="{% url 'products' %}">
-                <div class="input-group w-100">
-                    <input class="form-control border border-black rounded-0" type="text" name="q" id="search" placeholder="Search our site">
-                    <div class="d-flex flex-row">
-                        <button class="form-control btn btn-black border border-black rounded-0 icon" type="submit">
-                            <span>
-                                <i class="fas fa-search"></i>
-                            </span>
-                        </button>
-                        <button class="form-control btn btn-black border border-black rounded-0 icon" onclick="hideSearch()">
-                            <span id='search-close-btn'>
-                                <i class="fa-solid fa-xmark"></i>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        {% if messages %}
-            <div class="message-container">
-                {% for message in messages %}
-                    {% with message.level as level %}
-                        {% if level == 40 %}
-                            {% include 'includes/toasts/toast_error.html' %}
-                        {% elif level == 30 %}
-                            {% include 'includes/toasts/toast_warning.html' %}
-                        {% elif level == 25 %}
-                            {% include 'includes/toasts/toast_success.html' %}
-                        {% else %}
-                            {% include 'includes/toasts/toast_info.html' %}
-                        {% endif %}
-                    {% endwith %}
-                {% endfor %}
             </div>
+        </nav>
+    </div>
+    <!-- Search overlay -->
+    <div class="d-none" id="search-overlay">
+        <form method="GET" action="{% url 'products' %}">
+            <div class="input-group w-100">
+                <input class="form-control border border-black rounded-0" type="text" name="q" id="search" placeholder="Search our site">
+                <div class="d-flex flex-row">
+                    <button class="form-control btn btn-black border border-black rounded-0 icon" type="submit">
+                        <span>
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </button>
+                    <button class="form-control btn btn-black border border-black rounded-0 icon" onclick="hideSearch()">
+                        <span id='search-close-btn'>
+                            <i class="fa-solid fa-xmark"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% if messages %}
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
         {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
+    {% endif %}
 
-        {% block page_header %}
-        {% endblock %}
-        
-        <div class="content">
+    {% block page_header %}
+    {% endblock %}
+
+    <div class="content">
         {% block content %}
         {% endblock %}
-        </div>
+    </div>
 
-        <!-- Footer Address -->
-        <footer class="pt-1 footer">
-            <div class="row mx-auto mt-3 text-center off-white-text footer-size">
-                <div class="col-12 col-md-3 text-md-start ps-3">
-                    <h5 class="off-white-text mb-3 footer-headings">Address</h5>
-                    <p><i class="fas fa-home me-1 green-text"></i> Clondrinagh Ind Estate, Limerick</p>
-                    <p><i class="fas fa-envelope me-1 green-text"></i> sales@chemstore.ie</p>
-                    <p><i class="fas fa-phone me-1 green-text"></i> 061 327 792</p>
-                    <p><i class="fa-solid fa-globe me-1 green-text"></i> <a class="off-white-text text-decoration-none" href="www.chemstore.ie" aria-label="link takes you to the chemstore website">www.chemstore.ie</a></p>
-                    <hr class="my-3 d-block d-md-none footer-break">
-                </div>
-                <!-- Footer site links to products -->
-                <div class="col-12 col-md-3 text-md-start font-bold">
-                    <h5 class="off-white-text mb-3 footer-headings">Products</h5>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=ppe"><p class="mb-1">PPE</p></a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=spill-kits"><p class="mb-1">Spill Kits</p></a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=spill-trays"><p class="mb-1">Spill Trays</p></a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets"><p class="mb-1">Safety Cabinets</p></a>
-                    <a class="dropdown-item" href="{% url 'products' %}?category=site-safety"><p class="mb-1">Site Safety</p></a>
-                    <hr class="my-3 d-block d-md-none footer-break">
-                </div>
-
-                <!-- Footer site links to account -->
-                <div class="col-12 col-md-3 text-md-start">
-                    <h5 class="off-white-text mb-3 footer-headings">Account</h5>
-                    {% if request.user.is_authenticated %}
-                    {% if request.user.is_superuser %}
-                        <a href="{% url 'add_product' %}" class="dropdown-item my-1"><p class="mb-1">Add Product</p></a>
-                    {% endif %}
-                        <a href="{% url 'profile' %}" class="dropdown-item mb-1"><p class="mb-1">My Profile</p></a>
-                        <a href="{% url 'account_logout' %}" class="dropdown-item mb-1"><p class="mb-1">Logout</p></a>
-                    {% else %}
-                        <a href="{% url 'account_signup' %}" class="dropdown-item mb-1"><p class="mb-1">Register</p></a>
-                        <a href="{% url 'account_login' %}" class="dropdown-item mb-1"><p class="mb-1">Login</p></a>
-                    {% endif %}
-                        <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
-                        <hr class="my-3 d-block d-md-none footer-break">
-                </div>
-
-                <!-- Chemstore Logo -->
-                <div class="col-12 col-md-3 py-3 pe-md-5">
-                    <a href="/">
-                        <img src="{% static 'media/chemstore-logo.png' %}" class="footer-logo" alt="Chem-eShop logo">
-                    </a>
-                    <!-- Newsletter sign up -->
-                    <hr>
-                    <a class="newsletter-sign-up" href="{% url 'newsletter' %}">
-                        <h6>To sign up to our newsletter, click here!</h6>
-                    </a>
-                    <!-- Social links -->
-                    <div>
-                        <a href="https://www.facebook.com/chemstoregroupire/" target="_blank" rel="noopener" aria-label="Opens the Chemstore Facebook page in a new tab."><i class="footer-link green-text fa-brands fa-facebook"></i></a>
-                        <a href="https://www.linkedin.com/company/chemstore-group" target="_blank" rel="noopener" aria-label="Opens the Chemstore LinkedIn page in a new tab."><i class="footer-link green-text fab fa-linkedin-in"></i></a>
-                        <a href="https://twitter.com/chemstore" target="_blank" rel="noopener" aria-label="Opens the Chemstore Twitter page in a new tab."><i class="footer-link green-text fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <!-- Privacy Policy -->
-                <div class="col-12 m-0 p-1 text-center">
-                    <small><a class="green-text text-decoration-none" href="https://www.privacypolicygenerator.info/live.php?token=jism7W5jD6YXxe8Cvu9gp6LO2OONok4j" target="_blank">Privacy Policy</a></small>
-                </div>       
+    <!-- Footer Address -->
+    <footer class="pt-1 footer">
+        <div class="row mx-auto mt-3 text-center off-white-text footer-size">
+            <div class="col-12 col-md-3 text-md-start ps-3">
+                <h5 class="off-white-text mb-3 footer-headings">Address</h5>
+                <p><i class="fas fa-home me-1 green-text"></i> Clondrinagh Ind Estate, Limerick</p>
+                <p><i class="fas fa-envelope me-1 green-text"></i> sales@chemstore.ie</p>
+                <p><i class="fas fa-phone me-1 green-text"></i> 061 327 792</p>
+                <p><i class="fa-solid fa-globe me-1 green-text"></i> <a class="off-white-text text-decoration-none" href="www.chemstore.ie" aria-label="link takes you to the chemstore website">www.chemstore.ie</a></p>
+                <hr class="my-3 d-block d-md-none footer-break">
             </div>
-        </footer>
+            <!-- Footer site links to products -->
+            <div class="col-12 col-md-3 text-md-start font-bold">
+                <h5 class="off-white-text mb-3 footer-headings">Products</h5>
+                <a class="dropdown-item" href="{% url 'products' %}?category=ppe">
+                    <p class="mb-1">PPE</p>
+                </a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=spill-kits">
+                    <p class="mb-1">Spill Kits</p>
+                </a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=spill-trays">
+                    <p class="mb-1">Spill Trays</p>
+                </a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=safety-cabinets">
+                    <p class="mb-1">Safety Cabinets</p>
+                </a>
+                <a class="dropdown-item" href="{% url 'products' %}?category=site-safety">
+                    <p class="mb-1">Site Safety</p>
+                </a>
+                <hr class="my-3 d-block d-md-none footer-break">
+            </div>
 
-        {% block postloadjs %}
-        <!-- js for toasts -->
-        <script>
-            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
-            var toastList = toastElList.map(function (toastEl) { 
-            return new bootstrap.Toast(toastEl); });
-                toastList.forEach(toast => toast.show());
-        </script>
-        {% endblock %}
-        <!-- js file for search overlay -->
-        <script src="{% static 'js/script.js' %}"></script>
-    </body>
+            <!-- Footer site links to account -->
+            <div class="col-12 col-md-3 text-md-start">
+                <h5 class="off-white-text mb-3 footer-headings">Account</h5>
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <a href="{% url 'add_product' %}" class="dropdown-item my-1">
+                    <p class="mb-1">Add Product</p>
+                </a>
+                {% endif %}
+                <a href="{% url 'profile' %}" class="dropdown-item mb-1">
+                    <p class="mb-1">My Profile</p>
+                </a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item mb-1">
+                    <p class="mb-1">Logout</p>
+                </a>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item mb-1">
+                    <p class="mb-1">Register</p>
+                </a>
+                <a href="{% url 'account_login' %}" class="dropdown-item mb-1">
+                    <p class="mb-1">Login</p>
+                </a>
+                {% endif %}
+                <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
+                <hr class="my-3 d-block d-md-none footer-break">
+            </div>
+
+            <!-- Chemstore Logo -->
+            <div class="col-12 col-md-3 py-3 pe-md-5">
+                <a href="/">
+                    <img src="{% static 'media/chemstore-logo.png' %}" class="footer-logo" alt="Chem-eShop logo">
+                </a>
+                <!-- Newsletter sign up -->
+                <hr>
+                <a class="newsletter-sign-up" href="{% url 'newsletter' %}">
+                    <h6>To sign up to our newsletter, click here!</h6>
+                </a>
+                <!-- Social links -->
+                <div>
+                    <a href="https://www.facebook.com/chemstoregroupire/" target="_blank" rel="noopener" aria-label="Opens the Chemstore Facebook page in a new tab."><i class="footer-link green-text fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/chemstore-group" target="_blank" rel="noopener" aria-label="Opens the Chemstore LinkedIn page in a new tab."><i class="footer-link green-text fab fa-linkedin-in"></i></a>
+                    <a href="https://twitter.com/chemstore" target="_blank" rel="noopener" aria-label="Opens the Chemstore Twitter page in a new tab."><i class="footer-link green-text fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <!-- Privacy Policy -->
+            <div class="col-12 m-0 p-1 text-center">
+                <small><a class="green-text text-decoration-none" href="https://www.privacypolicygenerator.info/live.php?token=jism7W5jD6YXxe8Cvu9gp6LO2OONok4j" target="_blank">Privacy Policy</a></small>
+            </div>
+        </div>
+    </footer>
+
+    {% block postloadjs %}
+    <!-- js for toasts -->
+    <script>
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl);
+        });
+        toastList.forEach(toast => toast.show());
+    </script>
+    {% endblock %}
+    <!-- js file for search overlay -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
 </html>

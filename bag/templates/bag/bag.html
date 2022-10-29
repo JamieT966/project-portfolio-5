@@ -15,7 +15,7 @@
             <span>Keep Shopping</span>
         </a>
     </div>
-    
+
     <div class="col-10 p-3 mx-auto bag-container">
         {% if bag_items %}
         <div class="d-block d-md-none">
@@ -32,28 +32,28 @@
                 </div>
             </div>
             {% for item in bag_items %}
-                <div class="row">
-                    <div class="col-12 col-sm-6 mb-3 text-center">
-                        {% include "bag/product-image.html" %}
-                    </div>
-                    <div class="col-12 col-sm-6 mb-3">
-                        {% include "bag/product-info.html" %}
-                    </div>
-                    <div class="col-12 col-sm-6 mb-3">
-                        {% include "bag/quantity-form.html" %}
-                    </div>
-                    <div class="col-12 col-sm-6 mb-3">
-                        <p class="my-0"><strong>Price:</strong> €{{ item.product.price }}</p>
-                        <p class="my-0"><strong>Subtotal:</strong> €{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                    </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 mb-3 text-center">
+                    {% include "bag/product-image.html" %}
                 </div>
+                <div class="col-12 col-sm-6 mb-3">
+                    {% include "bag/product-info.html" %}
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                    {% include "bag/quantity-form.html" %}
+                </div>
+                <div class="col-12 col-sm-6 mb-3">
+                    <p class="my-0"><strong>Price:</strong> €{{ item.product.price }}</p>
+                    <p class="my-0"><strong>Subtotal:</strong> €{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                </div>
+            </div>
 
-                {% if forloop.last %}
-                    <hr class="my-0">
-                {% else %}
-                    <hr class="mt-0 mb-3">
-                {% endif %}
-                
+            {% if forloop.last %}
+            <hr class="my-0">
+            {% else %}
+            <hr class="mt-0 mb-3">
+            {% endif %}
+
             {% endfor %}
         </div>
         <div class="table-responsive d-none d-md-block">
@@ -68,23 +68,23 @@
                     </tr>
                 </thead>
                 {% for item in bag_items %}
-                    <tr>
-                        <td class="p-3 w-25">
+                <tr>
+                    <td class="p-3 w-25">
                         {% include "bag/product-image.html" %}
-                        </td>
-                        <td class="py-3">
-                            {% include "bag/product-info.html" %}
-                        </td>
-                        <td class="py-3">
-                            <p class="my-0">€{{ item.product.price }}</p>
-                        </td>
-                        <td class="py-3 w-25">
-                            {% include "bag/quantity-form.html" %}
-                        </td>
-                        <td class="py-3">
-                            <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                        </td>
-                    </tr>
+                    </td>
+                    <td class="py-3">
+                        {% include "bag/product-info.html" %}
+                    </td>
+                    <td class="py-3">
+                        <p class="my-0">€{{ item.product.price }}</p>
+                    </td>
+                    <td class="py-3 w-25">
+                        {% include "bag/quantity-form.html" %}
+                    </td>
+                    <td class="py-3">
+                        <p class="my-0">€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    </td>
+                </tr>
                 {% endfor %}
                 <tr>
                     <td colspan="5" class="pt-5 text-end">
@@ -99,8 +99,8 @@
             </table>
         </div>
         {% else %}
-            <p class="lead my-5">Your bag is empty.</p>
-        {% endif %} 
+        <p class="lead my-5">Your bag is empty.</p>
+        {% endif %}
     </div>
 </div>
 
@@ -122,12 +122,15 @@
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+        var data = {
+            'csrfmiddlewaretoken': csrfToken,
+            'product_size': size
+        };
 
         $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
+            .done(function() {
+                location.reload();
+            });
     })
 </script>
 {% endblock %}

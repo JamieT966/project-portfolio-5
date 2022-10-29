@@ -430,6 +430,41 @@ Link can be found here: [Chem-eShop Github Project](https://github.com/users/Jam
 
 ### Validator Testing 
 
+[W3 HTML Validator](https://validator.w3.org/nu/) found a few issues that I am going to classify as bugs.
+
+1. Products page found an error Duplicate ID exampleModalLabel. 
+- This is due to me having a modal to confirm that the user wants to delete a product or review. The modal has to be in my for loop for it to work.
+
+2. Edit product page found multiple errors.
+- These errors are being caused by a django installation, ckeditor and not due to my code.
+
+3. Product detail page found multiple errors.
+- These are again being caused by django-ckeditor.
+
+__Pages Checked__
+
+- Home Page
+- Products Page
+- Product Detail Page
+- Add Product Page
+- Edit Product Page
+- Edit Review Page
+- Profile Page
+- Sign Up Page
+- Unsubscribe Page
+- Contact Page
+- Bag Page
+- Checkout Page
+- Checkout Success Page
+- Sign Up Page
+- Login Page
+- Logout Page
+- 404 Page
+
+[W3 CSS Validator](https://jigsaw.w3.org/css-validator/) found no issues.
+
+
+
 ### Manual Testing Test Cases and Results 
 
 ### Known bugs

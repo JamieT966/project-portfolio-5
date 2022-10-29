@@ -42,14 +42,15 @@
                             <td>
                                 <ul class="list-unstyled">
                                     {% for item in order.lineitems.all %}
-                                        <li class="small">
-                                            {% if item.product.has_sizes %}
-                                                Size {{ item.product.size|upper }}
-                                            {% endif %}{{ item.product.name }} x {{ item.quantity }}
-                                        </li>
+                                    <li class="small">
+                                        {% if item.product.has_sizes %}
+                                        Size {{ item.product.size|upper }}
+                                        {% endif %}{{ item.product.name }} x {{ item.quantity }}
+                                    </li>
                                     {% endfor %}
                                 </ul>
-                            </td><td>
+                            </td>
+                            <td>
                                 €{{ order.grand_total }}
                             </td>
                         </tr>
@@ -64,21 +65,21 @@
 {% endblock %}
 
 {% block postloadjs %}
-    {{ block.super }}
-    <!-- For some reason I can't link this script -->
-    <script src="{% static 'profiles/js/countryfield.js' %}"></script>
-    <script>
-        let countrySelected = $('#id_default_country').val();
-        if(!countrySelected) {
-            $('#id_default_country').css('color', '#aab7c4');
-        };
-        $('#id_default_country').change(function() {
-            countrySelected = $(this).val();
-            if(!countrySelected) {
-                $(this).css('color', '#aab7c4');
-            } else {
-                $(this).css('color', '#000');
-            }
-        });
-    </script>
+{{ block.super }}
+<!-- For some reason I can't link this script -->
+<script src="{% static 'profiles/js/countryfield.js' %}"></script>
+<script>
+    let countrySelected = $('#id_default_country').val();
+    if (!countrySelected) {
+        $('#id_default_country').css('color', '#aab7c4');
+    };
+    $('#id_default_country').change(function() {
+        countrySelected = $(this).val();
+        if (!countrySelected) {
+            $(this).css('color', '#aab7c4');
+        } else {
+            $(this).css('color', '#000');
+        }
+    });
+</script>
 {% endblock %}

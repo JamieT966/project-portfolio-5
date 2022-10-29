@@ -11,7 +11,7 @@
         <div class="col-10 col-lg-6">
             <form action="{% url 'edit_review' review.id %}" method="POST">
                 {% csrf_token %}
-                
+
                 {{ form|crispy }}
                 <!-- Submit Button -->
                 <div class="text-end">
@@ -20,7 +20,7 @@
                     </button>
                     <input type="submit" class="btn add-to-btn my-2" value="Update Review">
                 </div>
-            </form>  
+            </form>
         </div>
     </div>
 </div>
@@ -30,15 +30,15 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-            <h1 class="modal-title fs-5 navy-text" id="exampleModalLabel">Product Deletion</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5 navy-text" id="exampleModalLabel">Product Deletion</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-start">
                 <p class="navy-text">You are about to delete this product permanently. Are you sure?</p>
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Delete Permanently</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a href="{% url 'delete_review' review.id %}" class="btn btn-danger">Delete Permanently</a>
             </div>
         </div>
     </div>

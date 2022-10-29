@@ -4,8 +4,7 @@
         <div class="input-group">
             <!-- Button to decrease the quantity  -->
             <div class="input-group-prepend">
-                <button class="decrement-qty btn quantity-btn btn-sm rounded-0" 
-                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                <button class="decrement-qty btn quantity-btn btn-sm rounded-0" data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                     <span>
                         <i class="fas fa-minus fa-sm"></i>
                     </span>
@@ -14,15 +13,14 @@
             <input class="form-control form-control-sm qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
             <!-- Button to increase the quantity  -->
             <div class="input-group-append">
-                <button class="increment-qty btn btn-sm quantity-btn rounded-0"
-                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                <button class="increment-qty btn btn-sm quantity-btn rounded-0" data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                     <span>
                         <i class="fas fa-plus fa-sm"></i>
                     </span>
                 </button>
             </div>
             {% if item.product.has_sizes %}
-                <input type="hidden" name="product_size" value="{{ item.size }}">
+            <input type="hidden" name="product_size" value="{{ item.size }}">
             {% endif %}
         </div>
     </div>
