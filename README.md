@@ -510,6 +510,8 @@ Below are the series of user testing that I carried out on my site.
 
 ![Chem-eShop User Story Testing](documentation/images/user-story-testing.png)
 
+As well as the user story testing conducted I clicked every link and button on both desktop and mobile to confirm they are all functioning as they should.
+
 ### Known bugs
 
 I had a an issue with my webhooks not working and confirmation emails subsequently not being sent. To fix this issue I had to copy over the entirety of Boutique Ado's checkout code. I then could not migrate these model changes to Heroku. This was eventually fixed but I thought that I should make note of it just in case.
