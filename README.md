@@ -81,10 +81,10 @@ Users can also leave reviews on products, sign up to our newsletter and contact 
   </details>
 
 
- <details>
+  <details>
     <summary>Admin Stories</summary>
 
-  - As an **admin** I want to be able to **add a product** so that I can **I can add new products my store**
+    - As an **admin** I want to be able to **add a product** so that I can **I can add new products my store**
 
     - As an **admin** I want to be able to **edit a product** so that I can **make changes to any product**
 
