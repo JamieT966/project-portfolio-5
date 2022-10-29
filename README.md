@@ -406,7 +406,8 @@ Link can be found here: [Chem-eShop Github Project](https://github.com/users/Jam
 -   [Django](https://www.djangoproject.com/) was used as the framework to support rapid and secure development of the application.
 -   [Bootstrap](https://getbootstrap.com/) was used to build responsive web pages.
 -   [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html) used for account registration and authentication (version 0.41.0 installed because of project dependencies).
--   [Pillow](https://pillow.readthedocs.io/en/stable/index.html) - Python Imaging Library used for image handling
+-   [Pillow](https://pillow.readthedocs.io/en/stable/index.html) - Python Imaging Library used for image handling.
+-   [Django ckeditor](https://pypi.org/project/django-ckeditor/) - Renders rich text editor for various forms.
 -   [jquery library](https://code.jquery.com/jquery-3.4.1.min.js) - for various pieces of functionality including adding and removing items from the shopping cart and handling the increment and decrement of the quantity control.
 -   [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to simplify form rendering.
 -   [Django import export](https://django-import-export.readthedocs.io/en/latest/) used to export list of newsletter subscribers.
@@ -423,6 +424,9 @@ Link can be found here: [Chem-eShop Github Project](https://github.com/users/Jam
 -   [Heroku Postgres](https://www.heroku.com/postgres) - SQL database service provided by Heroku used to store models and data.
 -   [Balsamiq](https://balsamiq.com/) was used to create the wireframes during the design process.
 -   [Grammarly](https://app.grammarly.com/) was used to proof the content of my project and README.
+-   [Beautifier.io](https://beautifier.io/) was used to beautify html and css.
+-   [W3 HTML Validator](https://validator.w3.org/nu/) was used to validate HTML.
+-   [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
 -   __Adobe Photoshop__ was used to create the images for category products.
 
 
@@ -463,7 +467,9 @@ __Pages Checked__
 
 [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) found no issues.
 
+All code has been beautified with [Beautifier.io](https://beautifier.io/)
 
+All code has been made PEP8 compliant.
 
 ### Manual Testing Test Cases and Results 
 

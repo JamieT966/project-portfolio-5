@@ -15,4 +15,5 @@ class ContactFormAdmin(admin.ModelAdmin):
 
     ordering = ('-created_at',)
 
+
 admin.site.register(ContactForm, ContactFormAdmin)

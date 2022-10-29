@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.contrib import messages
-from .models import ContactForm
 from .forms import DisplayContactForm
 from django.core.mail import send_mail
 
@@ -20,7 +19,10 @@ def contact(request):
         product = form.cleaned_data['product']
 
         form = DisplayContactForm()
-        messages.success(request, 'Message received, a member of our team will get back to you shortly.')
+        messages.success(
+            request,
+            'Message received,'
+            'a member of our team will get back to you shortly.')
 
         # Send an email to Chemstore Admin
         send_mail(
