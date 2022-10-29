@@ -69,8 +69,8 @@
                         {% endif %}
                         {% if request.user.is_superuser %}
                         <div>
-                            <a href="{% url 'edit_product' product.id %}" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
-                            <button type="button" class="remove-item text-danger text-decoration-none ms-1 shadow-none delete-btn" data-bs-toggle="modal" data-bs-target="#delete-{{product.id}}">
+                            <a href="{% url 'edit_product' product.id %}" aria-label="takes user to edit product page" class="update-link text-info text-decoration-none"><i class="fa-solid fa-pen"></i></a>
+                            <button type="button" aria-label="delete button" class="remove-item text-danger text-decoration-none ms-1 shadow-none delete-btn" data-bs-toggle="modal" data-bs-target="#delete-{{product.id}}">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
@@ -103,6 +103,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                {% empty %}
+                <div class="col-10 col-lg-6 text-center mx-auto mt-5 p-3">
+                    <p>Sorry, there are no products that match that criteria</p>
                 </div>
             {% endfor %}
         </div>
