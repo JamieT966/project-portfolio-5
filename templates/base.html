@@ -9,11 +9,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Online store Chem-eShop set up by Chemstore to sell hazardous chemical safety products">
-    <meta name="keywords" content="Chemstore, chemical, safety, chemical safety, ppe, spill kits, spill trays, safety cabinets, site safety hazardous material storage">
     {% endblock %}
 
     {% block extra_meta %}
+    <meta name="description" content="Online store Chem-eShop set up by Chemstore to sell hazardous chemical safety products">
+    <meta name="keywords" content="Chemstore, chemical, safety, chemical safety, ppe, spill kits, spill trays, safety cabinets, site safety hazardous material storage">
     {% endblock %}
 
     {% block corecss %}
@@ -59,7 +59,7 @@
             <menu class="d-flex d-md-none">
                 <li class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
+                    <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-label="opens dropdown menu for account links" aria-expanded="false"><i class="fa-solid fa-user"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         {% if request.user.is_authenticated %}
                         {% if request.user.is_superuser %}
@@ -75,7 +75,7 @@
                     </ul>
                     <!-- Bag green bubble with number of items in it -->
                 <li class="nav-item ms-2">
-                    <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                    <a class="nav-link" href="{% url 'view_bag' %}" aria-label="opens bag" ><i class="fa-solid fa-bag-shopping"></i></a>
                     {% if product_count != 0 %}
                 <li class="cart-total cart-total-sm me-2">{{ product_count }}</li>
                 {% else %}
@@ -110,7 +110,7 @@
                     </li>
                     <li class="collapse navbar-collapse" id="navbarNavDropdown">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-label="opens dropdown menu for account links" aria-expanded="false">
                             <i class="fa-solid fa-user"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
@@ -127,7 +127,7 @@
                             <li><a href="{% url 'contact' %}" class="dropdown-item">Contact</a></li>
                         </ul>
                     <li class="nav-item ms-2 bag-icon">
-                        <a class="nav-link" href="{% url 'view_bag' %}"><i class="fa-solid fa-bag-shopping"></i></a>
+                        <a class="nav-link" href="{% url 'view_bag' %}" aria-label="opens bag"><i class="fa-solid fa-bag-shopping"></i></a>
                     </li>
                     {% if product_count != 0 %}
                     <li class="cart-total me-2">{{ product_count }}</li>
@@ -189,7 +189,7 @@
     <footer class="pt-1 footer">
         <div class="row mx-auto mt-3 text-center off-white-text footer-size">
             <div class="col-12 col-md-3 text-md-start ps-3">
-                <h5 class="off-white-text mb-3 footer-headings">Address</h5>
+                <h6 class="off-white-text mb-3 footer-headings">Address</h6>
                 <p><i class="fas fa-home me-1 green-text"></i> Clondrinagh Ind Estate, Limerick</p>
                 <p><i class="fas fa-envelope me-1 green-text"></i> sales@chemstore.ie</p>
                 <p><i class="fas fa-phone me-1 green-text"></i> 061 327 792</p>
@@ -198,7 +198,7 @@
             </div>
             <!-- Footer site links to products -->
             <div class="col-12 col-md-3 text-md-start font-bold">
-                <h5 class="off-white-text mb-3 footer-headings">Products</h5>
+                <h6 class="off-white-text mb-3 footer-headings">Products</h6>
                 <a class="dropdown-item" href="{% url 'products' %}?category=ppe">
                     <p class="mb-1">PPE</p>
                 </a>
@@ -219,7 +219,7 @@
 
             <!-- Footer site links to account -->
             <div class="col-12 col-md-3 text-md-start">
-                <h5 class="off-white-text mb-3 footer-headings">Account</h5>
+                <h6 class="off-white-text mb-3 footer-headings">Account</h6>
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                 <a href="{% url 'add_product' %}" class="dropdown-item my-1">
