@@ -304,6 +304,38 @@ Finally, I have set up a custom 404 error page (as well as 403, 405 and 500). Th
 ![Custom 404 Page](documentation/images/404.png)
 
 
+#### SEO and Web Marketing
+
+##### __SEO__
+
+I have taken several steps to help with the sites SEO:
+
+1. All images have descriptive alt tags.
+2. Meta desciptions are generated for each product using their product description.
+3. Meta keywords for homepage of site.
+4. SEO friendly description and slogan.
+
+
+##### __Email Marketing__
+
+1. A newsletter has been set up to capture emails.
+2. This can easily be exported to a CSV file from either the front-end or back-end.
+3. When exported Chemstore can use their email marketing service, Campaign Monitor.
+
+
+##### __Social Media__
+
+1. Although less useful for B2B products, A Facebook page for Chemstore exists.
+
+![Chemstore Facebook](documentation/images/chemstore-facebook.png)
+
+Link here: [Chemstore Facebook Page](https://www.facebook.com/chemstoregroupire/)
+
+Chemstore's main audience can be found on LinkedIn, as they predominantly operate in the B2B space.
+
+Link here: [Chemstore LinkedIn Page](https://www.linkedin.com/company/3483243)
+
+
 ### Features which could be implemented in the future
 
 Below are some of the features that I will be working on over the next few weeks.
@@ -473,6 +505,10 @@ All code has been beautified with [Beautifier.io](https://beautifier.io/)
 All code has been made PEP8 compliant.
 
 ### Manual Testing Test Cases and Results 
+
+Below are the series of user testing that I carried out on my site.
+
+![Chem-eShop User Story Testing](documentation/images/user-story-testing.png)
 
 ### Known bugs
 
