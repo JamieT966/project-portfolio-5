@@ -17,19 +17,29 @@ def display_newsletter_fom(request):
         instance = form.save(commit=False)
 
         if NewsletterSubscriber.objects.filter(email=instance.email).exists():
-            messages.error(request, 'Sorry, this email already exists in our system.')
+            messages.error(
+                request,
+                'Sorry, this email already exists in our system.')
         else:
             instance.save()
             form = NewsletterSubscriberForm()
-            messages.success(request, 'Thanks for signing up to the Hazmat Bulletin!')
+            messages.success(
+                request,
+                'Thanks for signing up to the Hazmat Bulletin!')
             # Sends email to newsletter subscriber
             subject = 'Thanks for signing up to the Hazmat Bulletin'
             from_email = settings.DEFAULT_FROM_EMAIL
             to_email = [instance.email]
-            with open(str(settings.BASE_DIR) + '/newsletter/templates/newsletter/emails/sign_up_email.txt') as i:
+            with open(
+                str(settings.BASE_DIR)
+                 + '/newsletter/'
+                 'templates/newsletter/emails/sign_up_email.txt') as i:
                 body = i.read()
-            message = EmailMultiAlternatives(subject=subject, body=body, from_email=from_email, to=to_email)
-            html_email = get_template('newsletter/emails/sign_up_email.html').render()
+            message = EmailMultiAlternatives(
+                subject=subject, body=body,
+                from_email=from_email, to=to_email)
+            html_email = get_template(
+                'newsletter/emails/sign_up_email.html').render()
             message.attach_alternative(html_email, 'text/html')
             message.send()
 
@@ -50,19 +60,32 @@ def unsubcribe_newsletter(request):
         if NewsletterSubscriber.objects.filter(email=instance.email).exists():
             NewsletterSubscriber.objects.filter(email=instance.email).delete()
             form = NewsletterSubscriberForm()
-            messages.success(request, 'Your email address has been removed from our system. We are sorry to see you go :(')
+            messages.success(
+                request,
+                'Your email address has been removed from our system.'
+                'We are sorry to see you go :(')
             subject = 'You have unsubscribed from the Hazmat Bulletin'
             from_email = settings.DEFAULT_FROM_EMAIL
             to_email = [instance.email]
-            with open(str(settings.BASE_DIR) + '/newsletter/templates/newsletter/emails/unsubscribe_email.txt') as i:
+            with open(
+                str(settings.BASE_DIR)
+                 + '/newsletter/templates/'
+                 'newsletter/emails/unsubscribe_email.txt') as i:
                 body = i.read()
-            message = EmailMultiAlternatives(subject=subject, body=body, from_email=from_email, to=to_email)
-            html_email = get_template('newsletter/emails/unsubscribe_email.html').render()
+            message = EmailMultiAlternatives(
+                subject=subject,
+                body=body,
+                from_email=from_email,
+                to=to_email)
+            html_email = get_template(
+                'newsletter/emails/unsubscribe_email.html').render()
             message.attach_alternative(html_email, 'text/html')
             message.send()
 
         else:
-            messages.error(request, 'We are unable to find that email address in our system.')
+            messages.error(
+                request,
+                'We are unable to find that email address in our system.')
 
     context = {
         'form': form,

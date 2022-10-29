@@ -14,6 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     ordering = ('name',)
 
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
@@ -29,6 +30,7 @@ class ReviewAdmin(admin.ModelAdmin):
         'rating',
         'date_created',
     )
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)

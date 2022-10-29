@@ -80,7 +80,8 @@ Users can also leave reviews on products, sign up to our newsletter and contact 
 
   </details>
 
- <details>
+
+  <details>
     <summary>Admin Stories</summary>
 
     - As an **admin** I want to be able to **add a product** so that I can **I can add new products my store**
@@ -97,7 +98,7 @@ Users can also leave reviews on products, sign up to our newsletter and contact 
 
     - As an **admin** I want to be able to **export a CSV list of my subscribers** so that I can **can use them in marketing campaigns using tools like Mail Chimp**
 
-  </details>    
+  </details>
 
 
 ## Features
@@ -303,6 +304,38 @@ Finally, I have set up a custom 404 error page (as well as 403, 405 and 500). Th
 ![Custom 404 Page](documentation/images/404.png)
 
 
+#### SEO and Web Marketing
+
+##### __SEO__
+
+I have taken several steps to help with the sites SEO:
+
+1. All images have descriptive alt tags.
+2. Meta desciptions are generated for each product using their product description.
+3. Meta keywords for homepage of site.
+4. SEO friendly description and slogan.
+
+
+##### __Email Marketing__
+
+1. A newsletter has been set up to capture emails.
+2. This can easily be exported to a CSV file from either the front-end or back-end.
+3. When exported Chemstore can use their email marketing service, Campaign Monitor.
+
+
+##### __Social Media__
+
+1. Although less useful for B2B products, A Facebook page for Chemstore exists.
+
+![Chemstore Facebook](documentation/images/chemstore-facebook.png)
+
+Link here: [Chemstore Facebook Page](https://www.facebook.com/chemstoregroupire/)
+
+Chemstore's main audience can be found on LinkedIn, as they predominantly operate in the B2B space.
+
+Link here: [Chemstore LinkedIn Page](https://www.linkedin.com/company/3483243)
+
+
 ### Features which could be implemented in the future
 
 Below are some of the features that I will be working on over the next few weeks.
@@ -379,8 +412,8 @@ Below are all the wireframes that I created for this project:
 
 Below is an image of my entity-relationship diagrams:
 
+![Chem-eShop ERD](documentation/images/chem-eshop-erd.png)
 
-INSERT DIAGRAMS
 
 ## Planning
 
@@ -406,7 +439,8 @@ Link can be found here: [Chem-eShop Github Project](https://github.com/users/Jam
 -   [Django](https://www.djangoproject.com/) was used as the framework to support rapid and secure development of the application.
 -   [Bootstrap](https://getbootstrap.com/) was used to build responsive web pages.
 -   [Django allauth](https://django-allauth.readthedocs.io/en/latest/index.html) used for account registration and authentication (version 0.41.0 installed because of project dependencies).
--   [Pillow](https://pillow.readthedocs.io/en/stable/index.html) - Python Imaging Library used for image handling
+-   [Pillow](https://pillow.readthedocs.io/en/stable/index.html) - Python Imaging Library used for image handling.
+-   [Django ckeditor](https://pypi.org/project/django-ckeditor/) - Renders rich text editor for various forms.
 -   [jquery library](https://code.jquery.com/jquery-3.4.1.min.js) - for various pieces of functionality including adding and removing items from the shopping cart and handling the increment and decrement of the quantity control.
 -   [Django crispy forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to simplify form rendering.
 -   [Django import export](https://django-import-export.readthedocs.io/en/latest/) used to export list of newsletter subscribers.
@@ -423,6 +457,9 @@ Link can be found here: [Chem-eShop Github Project](https://github.com/users/Jam
 -   [Heroku Postgres](https://www.heroku.com/postgres) - SQL database service provided by Heroku used to store models and data.
 -   [Balsamiq](https://balsamiq.com/) was used to create the wireframes during the design process.
 -   [Grammarly](https://app.grammarly.com/) was used to proof the content of my project and README.
+-   [Beautifier.io](https://beautifier.io/) was used to beautify html and css.
+-   [W3 HTML Validator](https://validator.w3.org/nu/) was used to validate HTML.
+-   [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate CSS.
 -   __Adobe Photoshop__ was used to create the images for category products.
 
 
@@ -463,9 +500,15 @@ __Pages Checked__
 
 [W3 CSS Validator](https://jigsaw.w3.org/css-validator/) found no issues.
 
+All code has been beautified with [Beautifier.io](https://beautifier.io/)
 
+All code has been made PEP8 compliant.
 
 ### Manual Testing Test Cases and Results 
+
+Below are the series of user testing that I carried out on my site.
+
+![Chem-eShop User Story Testing](documentation/images/user-story-testing.png)
 
 ### Known bugs
 

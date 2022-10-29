@@ -22,4 +22,5 @@ class NewsletterSubscriberAdmin(ExportActionMixin, admin.ModelAdmin):
 
     ordering = ('-signed_up_at',)
 
+
 admin.site.register(NewsletterSubscriber, NewsletterSubscriberAdmin)

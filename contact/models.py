@@ -10,7 +10,11 @@ class ContactForm(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
     phone = models.CharField(max_length=10)
-    product = models.ForeignKey(Product, null=True, blank=True, on_delete=models.SET_NULL)
+    product = models.ForeignKey(
+        Product,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL)
     message = models.TextField(max_length=600)
     created_at = models.DateTimeField(auto_now_add=True)
 

@@ -47,7 +47,8 @@ def all_products(request):
                                         "please try again.")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -92,13 +93,15 @@ def add_product(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES)
+        form = ProductForm(request.POST)
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Try again with a vaild product.')
+            messages.error(
+                request,
+                'Failed to add product. Try again with a vaild product.')
     else:
         form = ProductForm()
 
@@ -128,7 +131,10 @@ def edit_product(request, product_id):
             messages.success(request, 'Product updated successfully')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure all details are valid.')
+            messages.error(
+                request,
+                'Failed to update product.'
+                'Please ensure all details are valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -171,12 +177,16 @@ def add_review(request, product_id):
             review = form.save(commit=False)
 
             review.product = Product.objects.get(pk=product_id)
-            review.user = UserProfile.objects.get(user__username=request.user.username)
+            review.user = UserProfile.objects.get(
+                user__username=request.user.username)
             review.save()
             reviews = Review.objects.filter(product=product_id)
-            messages.success(request, 'Thank you! Your review has been submitted.')
+            messages.success(
+                request,
+                'Thank you! Your review has been submitted.')
 
-        return redirect(reverse('product_detail', kwargs={'product_id':product_id,}))
+        return redirect(
+            reverse('product_detail', kwargs={'product_id': product_id, }))
 
 
 @login_required
@@ -191,16 +201,24 @@ def edit_review(request, review_id):
         form = ReviewForm(request.POST, request.FILES, instance=review)
         if form.is_valid():
             review = form.save(commit=False)
-            review.user = UserProfile.objects.get(user__username=request.user.username)
+            review.user = UserProfile.objects.get(
+                user__username=request.user.username)
             review.save()
             messages.success(request, 'Review updated successfully')
-            return redirect(reverse('product_detail', kwargs={'product_id': review_id.product.id}))
+            return redirect(
+                reverse(
+                    'product_detail',
+                    kwargs={'product_id': review_id.product.id}))
 
         else:
-            messages.error(request, 'Failed to update review. Please ensure all details are valid.')
+            messages.error(
+                request,
+                'Failed to update review.'
+                'Please ensure all details are valid.')
     else:
         form = ReviewForm(instance=review)
-        review.user = UserProfile.objects.get(user__username=request.user.username)
+        review.user = UserProfile.objects.get(
+            user__username=request.user.username)
         messages.info(request, f'You are editing a review by {review.user}')
 
     template = 'products/edit_review.html'
@@ -222,15 +240,3 @@ def delete_review(request, review_id):
     review.delete()
     messages.success(request, 'Review deleted!')
     return redirect(reverse('products'))
-
-
-# def verify_purchase(user_profile, order_model, product):
-#     """
-#     Verify user has purchased a product, return boolean.
-#     """
-#     user_orders = order_model.objects.filter(user_profile=user_profile)
-#     for order in user_orders:
-#         for item in order.lineitems.all():
-#             if item.product == product:
-#                 return True
-#     return False
