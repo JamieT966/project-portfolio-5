@@ -80,10 +80,11 @@ Users can also leave reviews on products, sign up to our newsletter and contact 
 
   </details>
 
+
  <details>
     <summary>Admin Stories</summary>
 
-    - As an **admin** I want to be able to **add a product** so that I can **I can add new products my store**
+  - As an **admin** I want to be able to **add a product** so that I can **I can add new products my store**
 
     - As an **admin** I want to be able to **edit a product** so that I can **make changes to any product**
 
@@ -97,7 +98,7 @@ Users can also leave reviews on products, sign up to our newsletter and contact 
 
     - As an **admin** I want to be able to **export a CSV list of my subscribers** so that I can **can use them in marketing campaigns using tools like Mail Chimp**
 
-  </details>    
+  </details>
 
 
 ## Features
@@ -379,8 +380,8 @@ Below are all the wireframes that I created for this project:
 
 Below is an image of my entity-relationship diagrams:
 
+![Chem-eShop ERD](documentation/images/chem-eshop-erd.png)
 
-INSERT DIAGRAMS
 
 ## Planning
 
