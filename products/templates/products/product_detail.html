@@ -34,7 +34,7 @@
                     <h2 class="product-name">{{ product.name }}</h2>
                     <p class="lead"><strong>€{{ product.price }}</strong></p>
                     {% if product.rating %}
-                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                    <small class="green-text"><i class="fas fa-star mr-1"></i><strong>  {{ product.rating }} / 5</strong></small>
                     {% else %}
                     <small class="text-muted">No Rating</small>
                     {% endif %}
